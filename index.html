@@ -60,9 +60,16 @@
     justify-self: start;
   }
 
+  /* ensure all injected background photos render cleanly */
+  .img-ph {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   @media (max-width: 900px) {
     .hero.km-hero::before {
-      background-position: center 30%;
+      background-position: center 26%;
     }
 
     .hero.km-hero .hero-sub {
@@ -290,10 +297,17 @@
   document.getElementById('c2').style.backgroundImage = "url('https://lh3.googleusercontent.com/p/AF1QipNawYbHJGPG_BDcleZJNrZt__5l7XHYtu4FsaDh=w1600-h1200-k-no')";
   document.getElementById('c3').style.backgroundImage = "url('https://lh3.googleusercontent.com/p/AF1QipOloVN9WxjZ-p2rj9yRpwM4c4m03dnrBKCMgqaZ=w1600-h1200-k-no')";
   document.getElementById('c4').style.backgroundImage = "url('https://lh3.googleusercontent.com/p/AF1QipMVX68mxXSBGHYkc1ivQx-CfdxCT30ts83DhLLe=w1600-h1200-k-no')";
+  document.getElementById('c1').style.backgroundPosition = "center 44%";
+  document.getElementById('c2').style.backgroundPosition = "center 34%";
+  document.getElementById('c3').style.backgroundPosition = "center 48%";
+  document.getElementById('c4').style.backgroundPosition = "center 40%";
 
   document.getElementById('f1').style.backgroundImage = "url('https://lh3.googleusercontent.com/p/AF1QipPi60Rhp_M_xxAWbTMJJCYvoB-1s1c74dxn_zW3=w1600-h1200-k-no')";
   document.getElementById('f2').style.backgroundImage = "url('https://lh3.googleusercontent.com/p/AF1QipNawYbHJGPG_BDcleZJNrZt__5l7XHYtu4FsaDh=w1600-h1200-k-no')";
   document.getElementById('f3').style.backgroundImage = "url('https://lh3.googleusercontent.com/p/AF1QipM_H1qS-mfXLJMFWm9lxkws5u2555C6l4R54w_R=w1600-h1200-k-no')";
+  document.getElementById('f1').style.backgroundPosition = "center 28%";
+  document.getElementById('f2').style.backgroundPosition = "center 36%";
+  document.getElementById('f3').style.backgroundPosition = "center 52%";
 })();
 </script>
 </body>
