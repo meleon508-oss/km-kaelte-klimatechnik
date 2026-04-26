@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KM Kälte-Klimatechnik | Aachen, Düsseldorf und Umgebung</title>
+  <title>KM Kälte-Klimatechnik | Düsseldorf und Umgebung</title>
   <meta name="description" content="KM Kälte-Klimatechnik: Planung, Einbau, Wartung und Reparatur von Klima- und Kältetechnik für Privat und Gewerbe." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -398,6 +398,17 @@
       overflow: hidden;
     }
 
+    .km-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 54%;
+      z-index: 0;
+      filter: saturate(1.05) contrast(1.02);
+    }
+
     .page-header .header-item.km-hero::after {
       content: "";
       position: absolute;
@@ -534,6 +545,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: var(--km-image-pos, center center);
     }
 
     .km-solution-grid .solution-content-container {
@@ -594,18 +606,16 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
+      object-position: var(--km-image-pos, center center);
       display: block;
     }
 
     .km-photo-wrap.is-portrait img {
-      object-position: center 38%;
+      object-position: var(--km-image-pos, center 67%);
     }
 
     .km-photo-wrap.is-portrait {
-      aspect-ratio: 3 / 4;
-      max-width: 460px;
-      margin-inline: auto;
+      aspect-ratio: 4 / 3;
     }
 
     .km-photo-wrap.is-top img {
@@ -728,6 +738,10 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      .km-hero-video {
+        display: none;
+      }
+
       .km-brand-main .km-brand-mark,
       .km-brand-main .km-brand-copy strong,
       .km-brand-main .km-brand-copy small,
@@ -812,6 +826,10 @@
     @media (max-width: 767.98px) {
       .km-solution-grid {
         grid-template-columns: 1fr;
+      }
+
+      .km-hero-video {
+        object-position: center 58%;
       }
 
       body.front-page div.page-wrapper .module-list-image-text.company-details ul.list-unstyled li {
@@ -910,7 +928,7 @@
               <span class="km-brand-mark">K</span>
               <span class="km-brand-copy">
                 <strong>M Kälte-Klimatechnik</strong>
-                <small>Aachen / Düsseldorf / Umgebung</small>
+                <small>Düsseldorf / Umgebung</small>
               </span>
               <span class="km-flurry" aria-hidden="true">
                 <span class="km-flake f1">❄</span>
@@ -956,8 +974,11 @@
     <main id="top">
       <section class="page-header">
         <div class="header-item has-content km-hero">
+          <video class="km-hero-video" autoplay muted loop playsinline preload="metadata" poster="img/hero-house.jpg" aria-hidden="true">
+            <source src="media/hero-air-conditioning.mp4" type="video/mp4" />
+          </video>
           <div class="container content">
-            <h1 class="headline-small">Klimatechnik Aachen &amp; Düsseldorf</h1>
+            <h1 class="headline-small">Klimatechnik Düsseldorf &amp; Umgebung</h1>
             <h2>Ihr Partner für Klima- und Kältetechnik.</h2>
             <p class="km-hero-copy">Planung, Einbau, Wartung und Reparatur aus einer Hand. Sauber montiert, klar dokumentiert und strukturiert umgesetzt.</p>
             <p class="km-hero-actions">
@@ -1131,7 +1152,7 @@
 
           <div class="row mb-4 mb-lg-7">
             <div class="col-12 col-lg-6">
-              <div class="km-photo-wrap is-portrait">
+              <div class="km-photo-wrap is-portrait" style="--km-image-pos: center 71%;">
                 <img src="img/project-03.jpg" alt="Leitungsführung und Außeneinheit an Fassade" />
               </div>
             </div>
@@ -1232,7 +1253,7 @@
               <p><a class="btn btn-outline-primary text-uppercase btn-icon-arrow-right-border" href="#kontakt">Außenmontage planen</a></p>
             </div>
             <div class="col-12 col-lg-6 d-flex order-1 order-lg-2">
-              <div class="km-photo-wrap">
+              <div class="km-photo-wrap" style="--km-image-pos: center 57%;">
                 <img src="img/project-11.jpg" alt="Daikin Außeneinheit an heller Fassade" />
               </div>
             </div>
@@ -1240,8 +1261,8 @@
 
           <div class="row">
             <div class="col-12 col-lg-6 d-flex">
-              <div class="km-photo-wrap">
-                <img src="img/project-12.jpg" alt="Außeneinheit an Backsteinfassade" />
+              <div class="km-photo-wrap" style="--km-image-pos: 36% 41%;">
+                <img src="img/project-13.jpg" alt="Außeneinheit an Backsteinfassade mit Leitungsführung" />
               </div>
             </div>
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start pl-lg-6">
@@ -1302,11 +1323,11 @@
               <span class="km-brand-mark">K</span>
               <span class="km-brand-copy">
                 <strong>M Kälte-Klimatechnik</strong>
-                <small>Aachen / Düsseldorf / Umgebung</small>
+                <small>Düsseldorf / Umgebung</small>
               </span>
             </a>
             <p class="mb-0">KM Kälte-Klimatechnik</p>
-            <p class="mb-0">Region Aachen / Düsseldorf</p>
+            <p class="mb-0">Region Düsseldorf / Umgebung</p>
             <p>NRW</p>
             <p class="mb-0">Telefon: 01520 8598997</p>
             <p>E-Mail: <a href="mailto:info@km-kaelte-klimatechnik.de">info@km-kaelte-klimatechnik.de</a></p>
