@@ -157,6 +157,55 @@
       animation: km-snow-drift 7.4s linear 3.35s infinite;
     }
 
+    .km-brand-main .km-flurry {
+      position: absolute;
+      inset: -14px -18px;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 4;
+    }
+
+    .km-brand-main .km-flake {
+      position: absolute;
+      left: -12%;
+      top: 50%;
+      font-size: 9px;
+      line-height: 1;
+      color: rgba(179, 237, 255, 0.9);
+      text-shadow: 0 0 7px rgba(124, 214, 255, 0.45);
+      opacity: 0;
+      transform: translateX(0) translateY(0) scale(0.7) rotate(0deg);
+      will-change: transform, opacity;
+    }
+
+    .km-brand-main .km-flake.f1 {
+      top: 18%;
+      animation: km-flake-pass 11.8s linear 2.9s infinite;
+    }
+
+    .km-brand-main .km-flake.f2 {
+      top: 34%;
+      font-size: 7px;
+      animation: km-flake-pass 13.2s linear 5.1s infinite;
+    }
+
+    .km-brand-main .km-flake.f3 {
+      top: 56%;
+      animation: km-flake-pass 10.9s linear 3.7s infinite;
+    }
+
+    .km-brand-main .km-flake.f4 {
+      top: 72%;
+      font-size: 8px;
+      animation: km-flake-pass 12.6s linear 7.2s infinite;
+    }
+
+    .km-brand-main .km-flake.f5 {
+      top: 44%;
+      font-size: 6px;
+      animation: km-flake-pass 14.4s linear 9s infinite;
+    }
+
     @keyframes km-logo-mark-intro {
       0%, 36% {
         color: transparent;
@@ -248,6 +297,26 @@
       100% {
         opacity: 0;
         transform: translateX(20%) translateY(9px) rotate(4deg);
+      }
+    }
+
+    @keyframes km-flake-pass {
+      0%, 14% {
+        opacity: 0;
+        transform: translateX(-6%) translateY(-2px) scale(0.65) rotate(0deg);
+      }
+      20% {
+        opacity: 0.88;
+      }
+      33% {
+        opacity: 0.82;
+      }
+      44% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(124%) translateY(-8px) scale(1.06) rotate(50deg);
       }
     }
 
@@ -663,8 +732,13 @@
       .km-brand-main .km-brand-copy strong,
       .km-brand-main .km-brand-copy small,
       .km-brand-main::before,
-      .km-brand-main::after {
+      .km-brand-main::after,
+      .km-brand-main .km-flake {
         animation: none !important;
+      }
+
+      .km-brand-main .km-flurry {
+        display: none;
       }
 
       .km-brand-main .km-brand-mark {
@@ -837,6 +911,13 @@
               <span class="km-brand-copy">
                 <strong>M Kälte-Klimatechnik</strong>
                 <small>Aachen / Düsseldorf / Umgebung</small>
+              </span>
+              <span class="km-flurry" aria-hidden="true">
+                <span class="km-flake f1">❄</span>
+                <span class="km-flake f2">✦</span>
+                <span class="km-flake f3">❄</span>
+                <span class="km-flake f4">✧</span>
+                <span class="km-flake f5">❄</span>
               </span>
             </a>
             <button id="km-menu-btn" class="navbar-toggler d-inline-block d-xl-none" type="button" aria-label="Menü öffnen" aria-expanded="false">
