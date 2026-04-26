@@ -7,7 +7,7 @@
   <meta name="description" content="KM Kälte-Klimatechnik: Klimaanlagen, Kältetechnik, Wartung, Einbau und Service in Düsseldorf und Umgebung." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=UnifrakturCook:wght@700&amp;display=swap" rel="stylesheet" />
   <style>
     :root {
       --brand: #0a66c2;
@@ -96,7 +96,19 @@
       font-size: clamp(19px, 2.5vw, 26px);
       font-weight: 800;
       letter-spacing: -0.02em;
+      color: #102131;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .brand .k-glyph {
+      font-family: "UnifrakturCook", serif;
+      font-size: 1.22em;
       color: var(--brand);
+      line-height: 1;
+      transform: translateY(0.04em);
+      text-shadow: 0 2px 8px rgba(10, 102, 194, 0.28);
     }
 
     .brand span {
@@ -157,16 +169,46 @@
     }
 
     .hero {
-      background: linear-gradient(180deg, #f7fbff 0%, #ffffff 84%);
+      position: relative;
       border-bottom: 1px solid var(--line);
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("img/project-01.jpg") center 44%/cover no-repeat;
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.22) 38%, rgba(255, 255, 255, 0.58) 100%),
+        linear-gradient(125deg, rgba(10, 102, 194, 0.12), rgba(10, 102, 194, 0.03));
+      z-index: -1;
     }
 
     .hero-inner {
       display: grid;
-      grid-template-columns: 1.03fr 0.97fr;
-      gap: clamp(28px, 4vw, 58px);
-      align-items: center;
-      padding: clamp(32px, 6vw, 72px) 0;
+      grid-template-columns: 1fr;
+      gap: clamp(24px, 4vw, 44px);
+      align-items: end;
+      min-height: clamp(440px, 62vh, 620px);
+      padding: clamp(36px, 6vw, 72px) 0;
+    }
+
+    .hero-copy {
+      width: min(760px, 100%);
+      background: rgba(255, 255, 255, 0.54);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 16px;
+      padding: clamp(18px, 2.6vw, 28px);
+      backdrop-filter: blur(2px);
     }
 
     .eyebrow {
@@ -188,7 +230,7 @@
 
     .hero p {
       margin: 18px 0 0;
-      color: var(--muted);
+      color: #2f4a63;
       max-width: 58ch;
       font-size: clamp(15px, 1.4vw, 18px);
     }
@@ -225,22 +267,6 @@
       background: #fff;
       color: #1e3043;
       border-color: #bfd0e2;
-    }
-
-    .hero-media {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      aspect-ratio: 16/11;
-      border: 1px solid #d4e0ec;
-      background: #dbe8f5;
-    }
-
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 44%;
     }
 
     .quick-links {
@@ -632,7 +658,7 @@
   <header class="site-nav" id="top">
     <div class="container nav-inner">
       <a class="brand" href="#top">
-        <strong>KM Kälte-Klimatechnik</strong>
+        <strong><span class="k-glyph">K</span>M Kälte-Klimatechnik</strong>
         <span>Düsseldorf &amp; Umgebung</span>
       </a>
 
@@ -658,7 +684,7 @@
   <main>
     <section class="hero">
       <div class="container hero-inner">
-        <div>
+        <div class="hero-copy">
           <p class="eyebrow">Klimatechnik Düsseldorf</p>
           <h1>Ihr Partner für Klima-, Kälte- und Wärmepumpentechnik.</h1>
           <p>Planung, Einbau, Wartung und Reparatur aus einer Hand. Für Privatkunden, Büros und Gewerbeobjekte - sauber montiert, verständlich erklärt und zuverlässig betreut.</p>
@@ -667,10 +693,6 @@
             <a class="btn btn-secondary" href="tel:015208598997">Direkt anrufen</a>
           </div>
         </div>
-
-        <figure class="hero-media">
-          <img src="img/project-01.jpg" alt="Installierte Klimaanlage im Innenraum" />
-        </figure>
       </div>
     </section>
 
