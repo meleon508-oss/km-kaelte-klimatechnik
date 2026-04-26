@@ -283,59 +283,87 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: #fff;
-      padding: 16px 18px;
+      padding: 14px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       text-decoration: none;
-      font-weight: 700;
       color: #1f3248;
-      box-shadow: 0 6px 20px rgba(19, 59, 98, 0.06);
+      box-shadow: 0 6px 20px rgba(19, 59, 98, 0.05);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      min-height: 86px;
+    }
+
+    .quick-card:hover {
+      border-color: #9fbedc;
+      box-shadow: 0 12px 24px rgba(19, 59, 98, 0.1);
+      transform: translateY(-1px);
     }
 
     .quick-main {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 11px;
       min-width: 0;
     }
 
     .quick-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--brand), #0c79df);
-      color: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid #b7cee4;
+      background: #f7fbff;
+      color: #0a4d8e;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
       flex-shrink: 0;
+    }
+
+    .quick-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .quick-text {
       min-width: 0;
     }
 
+    .quick-text strong {
+      display: block;
+      color: #18324b;
+      font-size: 14px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
     .quick-card small {
       display: block;
       color: var(--muted);
-      font-size: 12px;
-      font-weight: 600;
-      margin-top: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 4px;
+      letter-spacing: 0.02em;
     }
 
     .quick-card .arrow {
       color: var(--brand);
-      font-size: 22px;
+      font-size: 18px;
       line-height: 1;
     }
 
     section {
       padding: clamp(44px, 7vw, 84px) 0;
+    }
+
+    section[id] {
+      scroll-margin-top: 96px;
     }
 
     .section-head {
@@ -591,27 +619,113 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .gallery-grid {
+    .reference-stack {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .reference-item {
+      border: 1px solid #d3dfea;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(17, 57, 98, 0.05);
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      min-height: 280px;
+    }
+
+    .reference-item.reverse {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .reference-copy {
+      padding: 18px;
+      display: grid;
+      align-content: center;
       gap: 10px;
     }
 
-    .shot {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #cfdceb;
-      background: #dce8f4;
-      aspect-ratio: 4/3;
+    .reference-copy h3 {
+      margin: 0;
+      font-size: clamp(20px, 2.2vw, 28px);
+      color: #15314d;
+      letter-spacing: -0.015em;
+      line-height: 1.12;
     }
 
-    .shot.tall { aspect-ratio: 3/4; }
-    .shot.wide { aspect-ratio: 16/10; grid-column: span 2; }
+    .reference-copy p {
+      margin: 0;
+      color: #425971;
+      font-size: 15px;
+      max-width: 60ch;
+    }
 
-    .shot img {
+    .reference-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .reference-tags span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      border-radius: 999px;
+      border: 1px solid #bad1e8;
+      background: #f5faff;
+      color: #1d456d;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0 10px;
+    }
+
+    .reference-media {
+      border-left: 1px solid #deebf7;
+      background: #dce8f4;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+    }
+
+    .reference-item.reverse .reference-media {
+      border-left: 0;
+      border-right: 1px solid #deebf7;
+      order: -1;
+    }
+
+    .reference-media figure {
+      margin: 0;
+      min-height: 150px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reference-media figure.wide {
+      grid-column: span 2;
+      min-height: 190px;
+    }
+
+    .reference-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .reference-media figcaption {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      background: rgba(10, 22, 35, 0.74);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 999px;
+      padding: 4px 8px;
     }
 
     .cta-band {
@@ -726,7 +840,18 @@
       .service-grid { grid-template-columns: 1fr 1fr; }
 
       .before-after-wrap { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .reference-item,
+      .reference-item.reverse { grid-template-columns: 1fr; }
+
+      .reference-item.reverse .reference-media {
+        border-right: 0;
+        border-top: 1px solid #deebf7;
+      }
+
+      .reference-media {
+        border-left: 0;
+        border-top: 1px solid #deebf7;
+      }
     }
 
     @media (max-width: 820px) {
@@ -744,9 +869,9 @@
       .quick-grid,
       .area-grid,
       .service-grid,
-      .gallery-grid { grid-template-columns: 1fr; }
+      .reference-media { grid-template-columns: 1fr; }
 
-      .shot.wide { grid-column: span 1; }
+      .reference-media figure.wide { grid-column: span 1; }
 
       .topbar-inner {
         justify-content: center;
@@ -819,29 +944,57 @@
       <div class="container quick-grid">
         <a class="quick-card" href="#einsatzbereiche">
           <span class="quick-main">
-            <span class="quick-icon">01</span>
-            <span class="quick-text">Einsatzbereiche<small>Passende Lösung für Zuhause &amp; Gewerbe</small></span>
+            <span class="quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 18h16"></path>
+                <path d="M5 18V9l7-5 7 5v9"></path>
+                <path d="M9 18v-4h6v4"></path>
+              </svg>
+            </span>
+            <span class="quick-text"><strong>Einsatzbereiche</strong><small>Wo wir in Wohn- und Gewerbeobjekten arbeiten</small></span>
           </span>
           <span class="arrow">→</span>
         </a>
         <a class="quick-card" href="#vorher-nachher">
           <span class="quick-main">
-            <span class="quick-icon">02</span>
-            <span class="quick-text">Vorher / Nachher<small>Mit Ordnung geplant und sauber umgesetzt</small></span>
+            <span class="quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 6h16"></path>
+                <path d="M4 12h10"></path>
+                <path d="M4 18h13"></path>
+                <path d="M18 11l3 3-3 3"></path>
+              </svg>
+            </span>
+            <span class="quick-text"><strong>Montageablauf</strong><small>Vom geschützten Aufbau bis zur Übergabe</small></span>
           </span>
           <span class="arrow">→</span>
         </a>
         <a class="quick-card" href="#leistungen">
           <span class="quick-main">
-            <span class="quick-icon">03</span>
-            <span class="quick-text">Leistungen<small>Montage, Wartung, Störungsdienst</small></span>
+            <span class="quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3v6"></path>
+                <path d="M12 21v-6"></path>
+                <path d="M3 12h6"></path>
+                <path d="M21 12h-6"></path>
+                <path d="m6.5 6.5 3.5 3.5"></path>
+                <path d="m14 14 3.5 3.5"></path>
+              </svg>
+            </span>
+            <span class="quick-text"><strong>Leistungsumfang</strong><small>Planung, Einbau, Wartung und Reparatur</small></span>
           </span>
           <span class="arrow">→</span>
         </a>
         <a class="quick-card" href="#referenzen">
           <span class="quick-main">
-            <span class="quick-icon">04</span>
-            <span class="quick-text">Referenzen<small>Echte Kundenprojekte aus der Region</small></span>
+            <span class="quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <path d="M8 14l2.5-2.5L13 14l3-3 2 2"></path>
+                <path d="M9 9h.01"></path>
+              </svg>
+            </span>
+            <span class="quick-text"><strong>Projektbeispiele</strong><small>Fotos direkt den Leistungen zugeordnet</small></span>
           </span>
           <span class="arrow">→</span>
         </a>
@@ -851,13 +1004,13 @@
     <section>
       <div class="container">
         <div class="section-head">
-          <h2>Immer perfekt klimatisiert.</h2>
-          <p>Vom ersten Termin bis zur laufenden Betreuung begleiten wir Projekte zuverlässig. Unser Fokus liegt auf effizienter Technik, ordentlicher Ausführung und klarer Kommunikation.</p>
+          <h2>Klimatechnik mit Plan.</h2>
+          <p>Wir arbeiten mit festen Abläufen: Besichtigung, technische Auslegung, saubere Montage und dokumentierte Übergabe. So bleiben Kosten, Termine und Qualität nachvollziehbar.</p>
         </div>
 
         <div class="about-grid">
           <article class="card">
-            <p>Wir installieren hochwertige Split- und Multisplit-Anlagen, unterstützen bei Wärmepumpen-Projekten und übernehmen Wartung sowie schnelle Fehlerbehebung. Ob Neubau, Nachrüstung oder Bestand: Wir planen so, dass die Lösung langfristig funktioniert.</p>
+            <p>KM Kälte-Klimatechnik installiert Split- und Multisplit-Anlagen in Bestandsgebäuden, Neubauten und gewerblichen Flächen. Leitungswege, Außeneinheit und Innenpositionen werden so abgestimmt, dass Funktion, Schall und Optik zusammenpassen. Nach Inbetriebnahme bekommst du eine klare Einweisung und konkrete Wartungshinweise.</p>
           </article>
           <aside class="stats">
             <div class="stat"><strong>24/7</strong><span>Notdienst erreichbar</span></div>
@@ -871,30 +1024,30 @@
     <section id="einsatzbereiche">
       <div class="container">
         <div class="section-head">
-          <h2>Maßgeschneiderte Lösungen aus einer Hand.</h2>
-          <p>Wir setzen Anlagen passgenau für unterschiedliche Gebäude- und Nutzungssituationen um.</p>
+          <h2>Typische Einsatzbereiche</h2>
+          <p>Je nach Gebäude und Nutzung unterscheiden sich Gerätewahl, Leitungsführung und Montageart. Diese Beispiele zeigen den praktischen Aufbau.</p>
         </div>
 
         <div class="area-grid">
           <article class="area">
             <div class="media"><img src="img/project-02.jpg" alt="Klimaanlage im Wohnbereich" /></div>
             <div class="copy">
-              <h3>Zuhause</h3>
-              <p>Komfortable Raumtemperatur und leiser Betrieb in Wohnräumen, Schlafzimmern und offenen Bereichen.</p>
+              <h3>Wohnräume</h3>
+              <p>Leiser Betrieb, kurze Luftwege und eine Positionierung, die im Alltag nicht stört.</p>
             </div>
           </article>
           <article class="area">
             <div class="media"><img src="img/project-04.jpg" alt="Klimaanlage in Dachgeschosswohnung" /></div>
             <div class="copy">
-              <h3>Bestand &amp; Sanierung</h3>
-              <p>Nachrüstungen in bestehenden Gebäuden mit sauberer Leitungsführung und unauffälliger Integration.</p>
+              <h3>Dachgeschoss &amp; Bestand</h3>
+              <p>Nachrüstung in vorhandener Bausubstanz mit geplanter Leitungsführung und sauberem Wandbild.</p>
             </div>
           </article>
           <article class="area">
             <div class="media"><img src="img/project-08.jpg" alt="Außeneinheit am Gebäude" /></div>
             <div class="copy">
-              <h3>Außenanlagen</h3>
-              <p>Stabile Außeneinheiten auf Dach, Fassade oder Boden - technisch sicher und langlebig montiert.</p>
+              <h3>Außenmontage</h3>
+              <p>Fassaden-, Dach- oder Bodenaufstellung mit stabilem Halt und wartungsfreundlichem Zugang.</p>
             </div>
           </article>
         </div>
@@ -904,30 +1057,30 @@
     <section id="leistungen">
       <div class="container">
         <div class="section-head">
-          <h2>Unsere Leistungen</h2>
-          <p>Von Beratung bis Wartung bekommst du alle Leistungen im selben Team, ohne Brüche im Ablauf.</p>
+          <h2>Leistungsumfang</h2>
+          <p>Beratung, Montage und Service bleiben in einem Team. Damit sind Zuständigkeiten klar und Rückfragen schnell geklärt.</p>
         </div>
 
         <div class="service-grid">
           <article class="service-box">
-            <h3>Klimatechnik</h3>
+            <h3>Planung &amp; Auslegung</h3>
             <ul>
-              <li>Klimaanlagen &amp; Klimageräte</li>
-              <li>Split- und Multisplit-Systeme</li>
-              <li>Wärmepumpen-Lösungen</li>
-              <li>Lüftungstechnik</li>
-              <li>Klimasteuerung</li>
+              <li>Vor-Ort-Termin mit Bestandsaufnahme</li>
+              <li>Auslegung nach Raumgröße und Nutzung</li>
+              <li>Festlegung von Innen- und Außengeräten</li>
+              <li>Leitungswege inkl. Schall- und Optikaspekt</li>
+              <li>Transparente Angebotsaufstellung</li>
             </ul>
           </article>
 
           <article class="service-box">
-            <h3>Service &amp; Kältetechnik</h3>
+            <h3>Montage &amp; Service</h3>
             <ul>
-              <li>Einbau &amp; Montage</li>
-              <li>Wartung &amp; Instandhaltung</li>
-              <li>Störungsdienst / Reparatur</li>
-              <li>Rohrleitungsführung außen &amp; innen</li>
-              <li>Systemoptimierung im Bestand</li>
+              <li>Saubere Installation im Innen- und Außenbereich</li>
+              <li>Dichtheits- und Funktionsprüfung</li>
+              <li>Inbetriebnahme mit Einweisung vor Ort</li>
+              <li>Wartung, Instandhaltung und Reparatur</li>
+              <li>Störungsdienst mit kurzer Reaktionszeit</li>
             </ul>
           </article>
         </div>
@@ -938,7 +1091,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Vorher / Nachher: strukturiert zum sauberen Ergebnis.</h2>
-          <p>Schon in der Vorbereitung arbeiten wir mit klaren Abläufen, Schutzmaßnahmen und sauberer Leitungsplanung. Das spart Zeit, reduziert Fehler und sorgt für ein ruhiges Gesamtbild nach der Montage.</p>
+          <p>Die Vorbereitung ist Teil der Qualität. Schutzabdeckung, definierte Laufwege und eine klare Reihenfolge der Arbeitsschritte sorgen für eine saubere Montage ohne Chaos auf der Baustelle.</p>
         </div>
 
         <div class="before-after-wrap">
@@ -948,7 +1101,7 @@
             </div>
             <div class="copy">
               <h3>Vorher: Vorbereitung &amp; Schutz</h3>
-              <p>Bevor die Technik eingebaut wird, sichern wir den Arbeitsbereich mit Schutzfolien und decken Möbel sowie Laufwege ab. Leitungswege werden vorab festgelegt, damit die Umsetzung geordnet startet.</p>
+              <p>Vor der Montage werden Flächen geschützt, Werkzeuge geordnet vorbereitet und Leitungswege markiert. Dadurch bleibt der Arbeitsbereich kontrolliert und die Umsetzung läuft ohne unnötige Unterbrechungen.</p>
             </div>
           </article>
 
@@ -958,20 +1111,20 @@
             </div>
             <div class="copy">
               <h3>Nachher: sauber montiert &amp; übergeben</h3>
-              <p>Nach der Installation ist die Anlage exakt ausgerichtet, die Leitungsführung stimmig integriert und der Bereich gereinigt. So entsteht ein professionelles Ergebnis, das technisch und optisch überzeugt.</p>
+              <p>Nach Einbau und Testlauf ist die Inneneinheit sauber ausgerichtet, die Leitungsführung ordentlich integriert und der Raum wieder nutzbar. Danach folgt die Einweisung inklusive Hinweise zum Betrieb.</p>
             </div>
           </article>
         </div>
 
         <article class="detail-box">
           <h3>So arbeiten wir bei jedem Projekt mit Ordnung und Struktur</h3>
-          <p>Jede Umsetzung folgt einem klaren Ablauf: Erst analysieren wir das Objekt, dann planen wir Positionen und Leitungswege mit Blick auf Funktion, Lautstärke und Optik. Während der Montage bleibt der Bereich geschützt und organisiert. Zum Abschluss testen wir die Anlage unter Last, erklären die Bedienung Schritt für Schritt und dokumentieren die ausgeführten Arbeiten transparent.</p>
+          <p>Jede Umsetzung folgt einem festen Ablauf. Erst kommt die technische Klärung am Objekt, dann die Montage in vorbereiteten Arbeitszonen. Zum Schluss wird die Anlage geprüft, eingestellt und dokumentiert übergeben. Genau diese Struktur ist die Grundlage für ein ruhiges Baustellenbild und ein sauberes Endergebnis.</p>
           <ul class="process-list">
-            <li><strong>Bestandsaufnahme:</strong> Raumgröße, Nutzung, Wärmelast und technische Voraussetzungen werden exakt erfasst.</li>
-            <li><strong>Planung:</strong> Gerätepositionen, Leitungswege und Außenaufstellung werden sinnvoll und sauber abgestimmt.</li>
-            <li><strong>Montage mit Schutz:</strong> Arbeitsflächen werden abgedeckt, Installationsschritte koordiniert und ordentlich ausgeführt.</li>
-            <li><strong>Inbetriebnahme:</strong> Dichtheit, Leistung, Geräuschverhalten und Steuerung werden geprüft und feinjustiert.</li>
-            <li><strong>Übergabe:</strong> Klare Einweisung, dokumentierte Arbeitsschritte und verbindliche Hinweise zu Wartung und Betrieb.</li>
+            <li><strong>Bestandsaufnahme:</strong> Gebäude, Räume und technische Voraussetzungen werden direkt vor Ort geprüft.</li>
+            <li><strong>Planung:</strong> Positionen und Leitungswege werden vor Montage verbindlich festgelegt.</li>
+            <li><strong>Montage mit Schutz:</strong> Abdeckungen, Materiallogik und saubere Schrittfolge sichern den Ablauf.</li>
+            <li><strong>Prüfung:</strong> Dichtheit, Funktion und Steuerung werden vollständig getestet.</li>
+            <li><strong>Übergabe:</strong> Bedienung, Wartungsintervalle und Dokumentation werden nachvollziehbar erklärt.</li>
           </ul>
         </article>
       </div>
@@ -980,24 +1133,121 @@
     <section class="gallery" id="referenzen">
       <div class="container">
         <div class="section-head">
-          <h2>Referenzen aus Kundenprojekten</h2>
-          <p>Alle Fotos stammen aus realen Umsetzungen und zeigen typische Einbau- und Außenlösungen.</p>
+          <h2>Projektbeispiele mit direkter Zuordnung</h2>
+          <p>Die Bilder sind nicht zufällig sortiert. Jeder Block zeigt ein konkretes Leistungsbild mit passender Foto-Dokumentation aus realen Kundenprojekten.</p>
         </div>
 
-        <div class="gallery-grid">
-          <figure class="shot wide"><img src="img/project-09.jpg" alt="Montagevorbereitung im Innenraum" /></figure>
-          <figure class="shot"><img src="img/project-03.jpg" alt="Außenverrohrung an Hausfassade" /></figure>
-          <figure class="shot"><img src="img/project-05.jpg" alt="Außeneinheit an Hauswand" /></figure>
-          <figure class="shot"><img src="img/project-06.jpg" alt="Klimagerät auf Schrägdach" /></figure>
-          <figure class="shot"><img src="img/project-07.jpg" alt="Außeneinheit vor Gebäude" /></figure>
-          <figure class="shot tall"><img src="img/project-10.jpg" alt="Außeneinheit an Wand mit Garten" /></figure>
-          <figure class="shot"><img src="img/project-11.jpg" alt="Außeneinheit an Backsteinfassade" /></figure>
-          <figure class="shot"><img src="img/project-12.jpg" alt="Außeneinheit an roter Fassade" /></figure>
-          <figure class="shot"><img src="img/project-13.jpg" alt="Außeneinheit an heller Fassade" /></figure>
-          <figure class="shot"><img src="img/project-01.jpg" alt="Innenraum mit installiertem Gerät" /></figure>
-          <figure class="shot"><img src="img/project-02.jpg" alt="Wohnbereich mit schwarzer Klimaanlage" /></figure>
-          <figure class="shot"><img src="img/project-04.jpg" alt="Wohnzimmer mit eingebauter Inneneinheit" /></figure>
-          <figure class="shot"><img src="img/project-08.jpg" alt="Hausansicht mit installierter Außeneinheit" /></figure>
+        <div class="reference-stack">
+          <article class="reference-item">
+            <div class="reference-copy">
+              <h3>Innenmontage mit Schutzkonzept</h3>
+              <p>Der Einbau startet mit vollständiger Abdeckung und klarer Materialordnung. Nach Fertigstellung ist die Anlage exakt ausgerichtet und der Raum wieder sauber nutzbar.</p>
+              <div class="reference-tags">
+                <span>Vorbereitung</span>
+                <span>Innenmontage</span>
+                <span>Übergabe</span>
+              </div>
+            </div>
+            <div class="reference-media">
+              <figure class="wide">
+                <img src="img/project-09.jpg" alt="Innenraum mit Schutzabdeckung vor Montagebeginn" />
+                <figcaption>Vorbereitung</figcaption>
+              </figure>
+              <figure class="wide">
+                <img src="img/project-01.jpg" alt="Fertig installierte Inneneinheit in modernem Raum" />
+                <figcaption>Nachher</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="reference-item reverse">
+            <div class="reference-copy">
+              <h3>Komfortlösungen im Wohnbereich</h3>
+              <p>Für Wohn- und Schlafbereiche werden Geräteleistung, Luftführung und Position abgestimmt. Ziel ist ein ruhiger Betrieb bei sichtbarer, aber unaufdringlicher Integration.</p>
+              <div class="reference-tags">
+                <span>Wohnraum</span>
+                <span>Bestand</span>
+                <span>Leiser Betrieb</span>
+              </div>
+            </div>
+            <div class="reference-media">
+              <figure>
+                <img src="img/project-02.jpg" alt="Inneneinheit im Wohnraum mit dunkler Akzentwand" />
+              </figure>
+              <figure>
+                <img src="img/project-04.jpg" alt="Inneneinheit in Dachgeschosswohnung über Sitzbereich" />
+              </figure>
+            </div>
+          </article>
+
+          <article class="reference-item">
+            <div class="reference-copy">
+              <h3>Fassadenmontage und Leitungsführung</h3>
+              <p>Bei Außenfassaden zählen saubere Trassen, stabile Halterungen und ein wartungsfreundlicher Zugang. Die Leitungen werden geordnet geführt und optisch in die Fassade eingebunden.</p>
+              <div class="reference-tags">
+                <span>Fassade</span>
+                <span>Leitungstrasse</span>
+                <span>Servicezugang</span>
+              </div>
+            </div>
+            <div class="reference-media">
+              <figure class="wide">
+                <img src="img/project-03.jpg" alt="Außenverrohrung und Außeneinheit an weißer Fassade" />
+              </figure>
+              <figure>
+                <img src="img/project-05.jpg" alt="Außeneinheit auf Dachfläche neben Mauerwerk" />
+              </figure>
+              <figure>
+                <img src="img/project-11.jpg" alt="Daikin Außeneinheit an heller Fassade im Gartenbereich" />
+              </figure>
+            </div>
+          </article>
+
+          <article class="reference-item reverse">
+            <div class="reference-copy">
+              <h3>Dachmontage und erhöhte Aufstellung</h3>
+              <p>Auf Dächern und erhöhten Positionen sichern wir den festen Stand durch passende Konsolen und Aufständerungen. Gleichzeitig bleibt der Zugang für Wartung und Reinigung gewährleistet.</p>
+              <div class="reference-tags">
+                <span>Dach</span>
+                <span>Aufständerung</span>
+                <span>Wartung</span>
+              </div>
+            </div>
+            <div class="reference-media">
+              <figure class="wide">
+                <img src="img/project-06.jpg" alt="Schwarze Außeneinheit auf Ziegeldach mit Halterung" />
+              </figure>
+              <figure>
+                <img src="img/project-08.jpg" alt="Hisense Außeneinheit an Hausfassade im Garten" />
+              </figure>
+              <figure>
+                <img src="img/project-13.jpg" alt="Daikin Außeneinheit an heller Klinkerfassade mit Leitungsführung" />
+              </figure>
+            </div>
+          </article>
+
+          <article class="reference-item">
+            <div class="reference-copy">
+              <h3>Bodennahe Außenbereiche</h3>
+              <p>Bei bodennaher Aufstellung achten wir auf sichere Abstände, erschütterungsarme Befestigung und eine Leitungsführung, die auch im Gartenbereich ordentlich bleibt.</p>
+              <div class="reference-tags">
+                <span>Bodenaufstellung</span>
+                <span>Außenbereich</span>
+                <span>Bestandshaus</span>
+              </div>
+            </div>
+            <div class="reference-media">
+              <figure>
+                <img src="img/project-07.jpg" alt="Außeneinheit auf Grundstück vor weißem Haus" />
+              </figure>
+              <figure>
+                <img src="img/project-10.jpg" alt="Hisense Außeneinheit auf Fundament im Garten" />
+              </figure>
+              <figure class="wide">
+                <img src="img/project-12.jpg" alt="Daikin Außeneinheit an roter Backsteinfassade" />
+              </figure>
+            </div>
+          </article>
         </div>
       </div>
     </section>
