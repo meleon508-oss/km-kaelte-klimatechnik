@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KM Kälte-Klimatechnik | Aachen, Düsseldorf und Umgebung</title>
   <meta name="description" content="KM Kälte-Klimatechnik: Planung, Einbau, Wartung und Reparatur von Klima- und Kältetechnik für Privat und Gewerbe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://www.kkl.de" crossorigin />
   <link rel="stylesheet" href="https://www.kkl.de/wp-content/themes/kkl/assets/css/style.min.css?ver=47e183aa" />
   <style>
@@ -33,24 +36,19 @@
     .km-brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       text-decoration: none;
     }
 
     .km-brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--km-primary);
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 27px;
+      display: inline-block;
+      font-family: "UnifrakturCook", serif;
+      font-size: 56px;
       line-height: 1;
-      font-family: "TradeGothicLTPro", sans-serif;
-      font-weight: 700;
-      box-shadow: 0 8px 18px rgba(0, 135, 204, 0.22);
+      color: #0a84d8;
+      text-shadow: 0 0 14px rgba(74, 184, 255, 0.45), 0 2px 0 rgba(7, 84, 147, 0.45);
+      transform: translateY(2px);
+      flex-shrink: 0;
     }
 
     .km-brand-copy {
@@ -58,7 +56,10 @@
       flex-direction: column;
       line-height: 1.05;
       position: relative;
-      padding: 5px 14px 4px;
+      padding: 6px 16px 5px;
+      border: 1px solid rgba(45, 168, 255, 0.55);
+      box-shadow: inset 0 0 0 1px rgba(45, 168, 255, 0.26), 0 0 14px rgba(45, 168, 255, 0.22);
+      overflow: hidden;
     }
 
     .km-brand-copy strong {
@@ -67,8 +68,7 @@
       color: #0e2435;
       font-weight: 700;
       position: relative;
-      display: inline-block;
-      padding: 0 4px;
+      z-index: 1;
     }
 
     .km-brand-copy small {
@@ -78,55 +78,48 @@
       font-size: 11px;
       color: #6a7781;
       font-weight: 700;
+      position: relative;
+      z-index: 1;
     }
 
     .km-brand-copy::before,
     .km-brand-copy::after {
       content: "";
       position: absolute;
-      top: 4px;
-      bottom: 4px;
-      width: 2px;
-      background: linear-gradient(180deg, rgba(10, 102, 194, 0) 0%, rgba(20, 128, 223, 0.9) 30%, rgba(90, 198, 255, 1) 50%, rgba(20, 128, 223, 0.9) 70%, rgba(10, 102, 194, 0) 100%);
-      box-shadow: 0 0 8px rgba(72, 184, 255, 0.42);
-      animation: km-line-blink 3.2s ease-in-out infinite;
+      pointer-events: none;
     }
 
-    .km-brand-copy::before { left: 0; }
+    .km-brand-copy::before {
+      inset: 0;
+      border: 1px solid rgba(119, 214, 255, 0.55);
+      opacity: 0.55;
+      animation: km-outline-pulse 1.9s ease-in-out infinite;
+    }
 
     .km-brand-copy::after {
-      right: 0;
-      animation-delay: 1.6s;
+      top: -45%;
+      bottom: -45%;
+      width: 48px;
+      left: -52px;
+      background: linear-gradient(90deg, rgba(130, 220, 255, 0) 0%, rgba(130, 220, 255, 0.88) 50%, rgba(130, 220, 255, 0) 100%);
+      filter: blur(0.25px);
+      animation: km-outline-sweep 2.6s linear infinite;
     }
 
-    .km-brand-copy strong::before,
-    .km-brand-copy strong::after {
-      content: "";
-      position: absolute;
-      left: -8px;
-      right: -8px;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(10, 102, 194, 0) 0%, rgba(20, 128, 223, 0.95) 32%, rgba(90, 198, 255, 0.98) 50%, rgba(20, 128, 223, 0.95) 68%, rgba(10, 102, 194, 0) 100%);
-      box-shadow: 0 0 8px rgba(72, 184, 255, 0.45);
-      animation: km-line-blink 3.2s ease-in-out infinite;
-    }
-
-    .km-brand-copy strong::before { top: -4px; }
-
-    .km-brand-copy strong::after {
-      bottom: -5px;
-      animation-delay: 0.8s;
-    }
-
-    @keyframes km-line-blink {
+    @keyframes km-outline-pulse {
       0%, 100% {
         opacity: 0.45;
-        filter: brightness(0.95);
+        box-shadow: inset 0 0 0 1px rgba(45, 168, 255, 0.18), 0 0 8px rgba(45, 168, 255, 0.1);
       }
-      50% {
+      52% {
         opacity: 1;
-        filter: brightness(1.25);
+        box-shadow: inset 0 0 0 1px rgba(45, 168, 255, 0.62), 0 0 18px rgba(45, 168, 255, 0.4);
       }
+    }
+
+    @keyframes km-outline-sweep {
+      0% { left: -58px; }
+      100% { left: calc(100% + 58px); }
     }
 
     #km-nav-links > li > a {
@@ -467,6 +460,9 @@
 
     #main-footer .km-brand-copy {
       padding: 0;
+      border: 0;
+      box-shadow: none;
+      overflow: visible;
     }
 
     #main-footer .km-brand-copy::before,
@@ -526,6 +522,10 @@
 
       .km-brand-copy small {
         font-size: 10px;
+      }
+
+      .km-brand-mark {
+        font-size: 46px;
       }
 
       .module-three-boxes .item.km-shortcut p {
@@ -613,7 +613,7 @@
             <a class="navbar-brand km-brand" href="#top" aria-label="KM Kälte-Klimatechnik">
               <span class="km-brand-mark">K</span>
               <span class="km-brand-copy">
-                <strong>KM Kälte-Klimatechnik</strong>
+                <strong>M Kälte-Klimatechnik</strong>
                 <small>Aachen / Düsseldorf / Umgebung</small>
               </span>
             </a>
@@ -998,7 +998,7 @@
             <a class="navbar-brand km-brand mb-2" href="#top">
               <span class="km-brand-mark">K</span>
               <span class="km-brand-copy">
-                <strong>KM Kälte-Klimatechnik</strong>
+                <strong>M Kälte-Klimatechnik</strong>
                 <small>Aachen / Düsseldorf / Umgebung</small>
               </span>
             </a>
