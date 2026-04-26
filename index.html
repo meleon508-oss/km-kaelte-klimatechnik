@@ -46,20 +46,18 @@
       font-size: 56px;
       line-height: 1;
       color: #0a84d8;
-      text-shadow: 0 0 14px rgba(74, 184, 255, 0.45), 0 2px 0 rgba(7, 84, 147, 0.45);
+      -webkit-text-stroke: 0.9px rgba(94, 202, 255, 0.72);
+      text-shadow: 0 0 10px rgba(74, 184, 255, 0.35), 0 2px 0 rgba(7, 84, 147, 0.36);
       transform: translateY(2px);
       flex-shrink: 0;
+      animation: km-k-pulse 2.8s ease-in-out infinite;
     }
 
     .km-brand-copy {
       display: inline-flex;
       flex-direction: column;
-      line-height: 1.05;
-      position: relative;
-      padding: 6px 16px 5px;
-      border: 1px solid rgba(45, 168, 255, 0.55);
-      box-shadow: inset 0 0 0 1px rgba(45, 168, 255, 0.26), 0 0 14px rgba(45, 168, 255, 0.22);
-      overflow: hidden;
+      line-height: 1.03;
+      padding: 0;
     }
 
     .km-brand-copy strong {
@@ -67,8 +65,10 @@
       letter-spacing: -0.02em;
       color: #0e2435;
       font-weight: 700;
-      position: relative;
-      z-index: 1;
+      display: inline-block;
+      -webkit-text-stroke: 0.65px rgba(72, 187, 255, 0.62);
+      text-shadow: 0 0 0 rgba(67, 183, 255, 0);
+      animation: km-text-outline 2.8s ease-in-out infinite;
     }
 
     .km-brand-copy small {
@@ -78,48 +78,32 @@
       font-size: 11px;
       color: #6a7781;
       font-weight: 700;
-      position: relative;
-      z-index: 1;
+      display: inline-block;
+      -webkit-text-stroke: 0.45px rgba(72, 187, 255, 0.52);
+      text-shadow: 0 0 0 rgba(67, 183, 255, 0);
+      animation: km-text-outline 2.8s ease-in-out infinite;
+      animation-delay: 0.35s;
     }
 
-    .km-brand-copy::before,
-    .km-brand-copy::after {
-      content: "";
-      position: absolute;
-      pointer-events: none;
-    }
-
-    .km-brand-copy::before {
-      inset: 0;
-      border: 1px solid rgba(119, 214, 255, 0.55);
-      opacity: 0.55;
-      animation: km-outline-pulse 1.9s ease-in-out infinite;
-    }
-
-    .km-brand-copy::after {
-      top: -45%;
-      bottom: -45%;
-      width: 48px;
-      left: -52px;
-      background: linear-gradient(90deg, rgba(130, 220, 255, 0) 0%, rgba(130, 220, 255, 0.88) 50%, rgba(130, 220, 255, 0) 100%);
-      filter: blur(0.25px);
-      animation: km-outline-sweep 2.6s linear infinite;
-    }
-
-    @keyframes km-outline-pulse {
+    @keyframes km-k-pulse {
       0%, 100% {
-        opacity: 0.45;
-        box-shadow: inset 0 0 0 1px rgba(45, 168, 255, 0.18), 0 0 8px rgba(45, 168, 255, 0.1);
+        text-shadow: 0 0 7px rgba(74, 184, 255, 0.25), 0 2px 0 rgba(7, 84, 147, 0.34);
+      }
+      50% {
+        text-shadow: 0 0 15px rgba(74, 184, 255, 0.62), 0 2px 0 rgba(7, 84, 147, 0.42);
+      }
+    }
+
+    @keyframes km-text-outline {
+      0%, 100% {
+        text-shadow: 0 0 0 rgba(67, 183, 255, 0);
+      }
+      48% {
+        text-shadow: 0 0 0 rgba(67, 183, 255, 0);
       }
       52% {
-        opacity: 1;
-        box-shadow: inset 0 0 0 1px rgba(45, 168, 255, 0.62), 0 0 18px rgba(45, 168, 255, 0.4);
+        text-shadow: 0 0 12px rgba(67, 183, 255, 0.5);
       }
-    }
-
-    @keyframes km-outline-sweep {
-      0% { left: -58px; }
-      100% { left: calc(100% + 58px); }
     }
 
     #km-nav-links > li > a {
@@ -348,10 +332,11 @@
 
     .km-photo-wrap {
       width: 100%;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 4 / 3;
       border-radius: 8px;
       overflow: hidden;
       background: #e7f0f9;
+      border: 1px solid #d6e3ef;
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     }
 
@@ -359,17 +344,16 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center center;
       display: block;
     }
 
-    .km-photo-wrap.is-contain img {
-      object-fit: contain;
-      background: #edf5fc;
-      padding: 8px;
+    .km-photo-wrap.is-portrait img {
+      object-position: center 38%;
     }
 
     .km-photo-wrap.is-top img {
-      object-position: center 28%;
+      object-position: center 24%;
     }
 
     .km-before-after {
@@ -444,6 +428,11 @@
       margin-top: 2.6rem;
     }
 
+    .frontpage-lightblue-section .row,
+    #projekte .row {
+      align-items: center;
+    }
+
     #projekte h3 {
       margin-bottom: 1rem;
     }
@@ -460,25 +449,17 @@
 
     #main-footer .km-brand-copy {
       padding: 0;
-      border: 0;
-      box-shadow: none;
-      overflow: visible;
-    }
-
-    #main-footer .km-brand-copy::before,
-    #main-footer .km-brand-copy::after,
-    #main-footer .km-brand-copy strong::before,
-    #main-footer .km-brand-copy strong::after {
-      display: none;
     }
 
     #main-footer .km-brand-copy strong {
       color: #fff;
       padding: 0;
+      -webkit-text-stroke: 0.55px rgba(124, 217, 255, 0.45);
     }
 
     #main-footer .km-brand-copy small {
       color: rgba(255, 255, 255, 0.78);
+      -webkit-text-stroke: 0.35px rgba(124, 217, 255, 0.32);
     }
 
     @media (max-width: 1399.98px) {
@@ -828,7 +809,7 @@
 
           <div class="row mb-4 mb-lg-7">
             <div class="col-12 col-lg-6">
-              <div class="km-photo-wrap is-contain">
+              <div class="km-photo-wrap is-portrait">
                 <img src="img/project-03.jpg" alt="Leitungsführung und Außeneinheit an Fassade" />
               </div>
             </div>
