@@ -40,6 +40,12 @@
       text-decoration: none;
     }
 
+    .km-brand-main {
+      position: relative;
+      isolation: isolate;
+      overflow: visible;
+    }
+
     .km-brand-mark {
       display: inline-block;
       font-family: "UnifrakturCook", serif;
@@ -56,7 +62,6 @@
         0 10px 16px rgba(8, 38, 58, 0.36);
       transform: translateY(2px);
       flex-shrink: 0;
-      animation: km-k-pulse 3.3s ease-in-out infinite;
     }
 
     .km-brand-copy {
@@ -79,7 +84,6 @@
         0 2px 0 rgba(12, 52, 81, 0.87),
         0 3px 0 rgba(8, 39, 61, 0.82),
         0 8px 14px rgba(7, 34, 52, 0.28);
-      animation: km-text-outline 3.3s ease-in-out infinite;
     }
 
     .km-brand-copy small {
@@ -92,8 +96,159 @@
       display: inline-block;
       -webkit-text-stroke: 0.38px rgba(72, 187, 255, 0.42);
       text-shadow: 0 0 0 rgba(67, 183, 255, 0);
-      animation: km-text-outline 2.8s ease-in-out infinite;
-      animation-delay: 0.35s;
+    }
+
+    .km-brand-main .km-brand-mark {
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1.3px rgba(82, 204, 255, 0.98);
+      text-shadow: 0 0 10px rgba(117, 221, 255, 0.63);
+      animation:
+        km-logo-mark-intro 2.2s cubic-bezier(0.2, 0.86, 0.18, 1) 0s 1 both,
+        km-k-pulse 3.3s ease-in-out 2.2s infinite;
+    }
+
+    .km-brand-main .km-brand-copy strong {
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px rgba(82, 204, 255, 0.95);
+      text-shadow: 0 0 9px rgba(110, 215, 255, 0.58);
+      animation:
+        km-logo-text-intro 2.05s cubic-bezier(0.23, 0.84, 0.23, 1) 0.08s 1 both,
+        km-text-outline 3.3s ease-in-out 2.18s infinite;
+    }
+
+    .km-brand-main .km-brand-copy small {
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 0.5px rgba(82, 204, 255, 0.8);
+      text-shadow: 0 0 6px rgba(108, 210, 255, 0.46);
+      animation:
+        km-logo-subline-intro 1.95s cubic-bezier(0.24, 0.83, 0.22, 1) 0.25s 1 both,
+        km-text-outline 2.8s ease-in-out 2.3s infinite;
+    }
+
+    .km-brand-main::before,
+    .km-brand-main::after {
+      content: "❄  ✦  ❄  ✧  ❄";
+      position: absolute;
+      left: -28%;
+      width: 165%;
+      pointer-events: none;
+      white-space: nowrap;
+      opacity: 0;
+      z-index: 3;
+      text-align: center;
+      letter-spacing: 0.52em;
+      color: rgba(146, 226, 255, 0.88);
+      text-shadow: 0 0 10px rgba(124, 214, 255, 0.46);
+    }
+
+    .km-brand-main::before {
+      top: -12px;
+      font-size: 10px;
+      animation: km-snow-drift 6.1s linear 2.15s infinite;
+    }
+
+    .km-brand-main::after {
+      top: 14px;
+      font-size: 8px;
+      color: rgba(186, 238, 255, 0.8);
+      animation: km-snow-drift 7.4s linear 3.35s infinite;
+    }
+
+    @keyframes km-logo-mark-intro {
+      0%, 36% {
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1.3px rgba(82, 204, 255, 0.98);
+        text-shadow: 0 0 10px rgba(117, 221, 255, 0.63);
+        filter: brightness(1.06) saturate(1.14);
+      }
+      68% {
+        color: #184562;
+        -webkit-text-fill-color: #184562;
+        -webkit-text-stroke: 1.2px rgba(88, 207, 255, 0.96);
+        text-shadow:
+          0 1px 0 rgba(16, 72, 113, 0.95),
+          0 2px 0 rgba(10, 48, 75, 0.88),
+          0 0 9px rgba(117, 221, 255, 0.47);
+        filter: brightness(1.04) saturate(1.1);
+      }
+      100% {
+        color: #0f2a3f;
+        -webkit-text-fill-color: #0f2a3f;
+        -webkit-text-stroke: 1.15px rgba(84, 204, 255, 0.96);
+        text-shadow:
+          0 1px 0 rgba(15, 66, 103, 0.96),
+          0 2px 0 rgba(11, 51, 80, 0.92),
+          0 3px 0 rgba(8, 37, 58, 0.88),
+          0 4px 0 rgba(6, 27, 43, 0.82),
+          0 10px 16px rgba(8, 38, 58, 0.36);
+        filter: brightness(1) saturate(1);
+      }
+    }
+
+    @keyframes km-logo-text-intro {
+      0%, 34% {
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px rgba(82, 204, 255, 0.95);
+        text-shadow: 0 0 9px rgba(110, 215, 255, 0.58);
+        filter: brightness(1.05) saturate(1.12);
+      }
+      67% {
+        color: #1f4c6b;
+        -webkit-text-fill-color: #1f4c6b;
+        -webkit-text-stroke: 0.95px rgba(85, 205, 255, 0.92);
+        text-shadow:
+          0 1px 0 rgba(15, 69, 108, 0.92),
+          0 2px 0 rgba(10, 47, 73, 0.86),
+          0 0 8px rgba(112, 215, 255, 0.43);
+      }
+      100% {
+        color: #173850;
+        -webkit-text-fill-color: #173850;
+        -webkit-text-stroke: 0.85px rgba(82, 202, 255, 0.9);
+        text-shadow:
+          0 1px 0 rgba(16, 66, 103, 0.94),
+          0 2px 0 rgba(12, 52, 81, 0.87),
+          0 3px 0 rgba(8, 39, 61, 0.82),
+          0 8px 14px rgba(7, 34, 52, 0.28);
+        filter: brightness(1) saturate(1);
+      }
+    }
+
+    @keyframes km-logo-subline-intro {
+      0%, 38% {
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 0.5px rgba(82, 204, 255, 0.8);
+        text-shadow: 0 0 6px rgba(108, 210, 255, 0.46);
+      }
+      100% {
+        color: #6a7781;
+        -webkit-text-fill-color: #6a7781;
+        -webkit-text-stroke: 0.38px rgba(72, 187, 255, 0.42);
+        text-shadow: 0 0 0 rgba(67, 183, 255, 0);
+      }
+    }
+
+    @keyframes km-snow-drift {
+      0% {
+        opacity: 0;
+        transform: translateX(-20%) translateY(-8px) rotate(-4deg);
+      }
+      12% {
+        opacity: 0.85;
+      }
+      70% {
+        opacity: 0.72;
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(20%) translateY(9px) rotate(4deg);
+      }
     }
 
     @keyframes km-k-pulse {
@@ -483,6 +638,11 @@
       padding: 0;
     }
 
+    #main-footer .km-brand-mark {
+      animation: none;
+      filter: none;
+    }
+
     #main-footer .km-brand-copy strong {
       color: #fff;
       padding: 0;
@@ -496,6 +656,31 @@
       color: rgba(255, 255, 255, 0.78);
       -webkit-text-stroke: 0.35px rgba(124, 217, 255, 0.32);
       filter: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .km-brand-main .km-brand-mark,
+      .km-brand-main .km-brand-copy strong,
+      .km-brand-main .km-brand-copy small,
+      .km-brand-main::before,
+      .km-brand-main::after {
+        animation: none !important;
+      }
+
+      .km-brand-main .km-brand-mark {
+        color: #0f2a3f;
+        -webkit-text-fill-color: #0f2a3f;
+      }
+
+      .km-brand-main .km-brand-copy strong {
+        color: #173850;
+        -webkit-text-fill-color: #173850;
+      }
+
+      .km-brand-main .km-brand-copy small {
+        color: #6a7781;
+        -webkit-text-fill-color: #6a7781;
+      }
     }
 
     @media (max-width: 1399.98px) {
@@ -647,7 +832,7 @@
       <div class="inner">
         <div class="row header-nav-row p-1">
           <div class="col-xl-3 header-first-col d-flex align-items-center justify-content-between">
-            <a class="navbar-brand km-brand" href="#top" aria-label="KM Kälte-Klimatechnik">
+            <a class="navbar-brand km-brand km-brand-main" href="#top" aria-label="KM Kälte-Klimatechnik">
               <span class="km-brand-mark">K</span>
               <span class="km-brand-copy">
                 <strong>M Kälte-Klimatechnik</strong>
