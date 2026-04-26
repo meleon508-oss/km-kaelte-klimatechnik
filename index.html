@@ -275,7 +275,7 @@
 
     .quick-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
 
@@ -292,6 +292,32 @@
       font-weight: 700;
       color: #1f3248;
       box-shadow: 0 6px 20px rgba(19, 59, 98, 0.06);
+    }
+
+    .quick-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .quick-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand), #0c79df);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+    }
+
+    .quick-text {
+      min-width: 0;
     }
 
     .quick-card small {
@@ -350,6 +376,96 @@
     }
 
     .card p { margin: 0; color: #3f556c; }
+
+    .before-after-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .ba-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(17, 57, 98, 0.06);
+    }
+
+    .ba-card .media {
+      aspect-ratio: 4/3;
+      background: #dce8f4;
+    }
+
+    .ba-card .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ba-card .copy {
+      padding: 14px 16px 16px;
+    }
+
+    .ba-card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color: #16314b;
+    }
+
+    .ba-card p {
+      margin: 0;
+      font-size: 14px;
+      color: #4d6278;
+    }
+
+    .detail-box {
+      border: 1px solid #d6e2ef;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #f7fbff 0%, #eff6fd 100%);
+      padding: 18px;
+      box-shadow: 0 8px 20px rgba(17, 57, 98, 0.05);
+    }
+
+    .detail-box h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: #17324c;
+      letter-spacing: -0.015em;
+    }
+
+    .detail-box p {
+      margin: 0 0 12px;
+      color: #3f556c;
+      font-size: 15px;
+    }
+
+    .process-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .process-list li {
+      position: relative;
+      padding-left: 24px;
+      color: #35506a;
+      font-size: 14px;
+    }
+
+    .process-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--brand);
+      position: absolute;
+      left: 4px;
+      top: 0.55em;
+    }
 
     .stats {
       display: grid;
@@ -609,6 +725,7 @@
       .area-grid,
       .service-grid { grid-template-columns: 1fr 1fr; }
 
+      .before-after-wrap { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
@@ -665,6 +782,7 @@
       <ul class="nav-links">
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#einsatzbereiche">Einsatzbereiche</a></li>
+        <li><a href="#vorher-nachher">Ablauf</a></li>
         <li><a href="#referenzen">Referenzen</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
@@ -676,6 +794,7 @@
     <div class="mobile-nav container" id="mobileNav">
       <a href="#leistungen">Leistungen</a>
       <a href="#einsatzbereiche">Einsatzbereiche</a>
+      <a href="#vorher-nachher">Ablauf</a>
       <a href="#referenzen">Referenzen</a>
       <a href="#kontakt">Kontakt</a>
     </div>
@@ -699,15 +818,31 @@
     <section class="quick-links">
       <div class="container quick-grid">
         <a class="quick-card" href="#einsatzbereiche">
-          <span>Einsatzbereiche<small>Passende Lösung für Zuhause &amp; Gewerbe</small></span>
+          <span class="quick-main">
+            <span class="quick-icon">01</span>
+            <span class="quick-text">Einsatzbereiche<small>Passende Lösung für Zuhause &amp; Gewerbe</small></span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="quick-card" href="#vorher-nachher">
+          <span class="quick-main">
+            <span class="quick-icon">02</span>
+            <span class="quick-text">Vorher / Nachher<small>Mit Ordnung geplant und sauber umgesetzt</small></span>
+          </span>
           <span class="arrow">→</span>
         </a>
         <a class="quick-card" href="#leistungen">
-          <span>Service &amp; Support<small>Montage, Wartung, Störungsdienst</small></span>
+          <span class="quick-main">
+            <span class="quick-icon">03</span>
+            <span class="quick-text">Leistungen<small>Montage, Wartung, Störungsdienst</small></span>
+          </span>
           <span class="arrow">→</span>
         </a>
         <a class="quick-card" href="#referenzen">
-          <span>Referenzen<small>Echte Kundenprojekte aus der Region</small></span>
+          <span class="quick-main">
+            <span class="quick-icon">04</span>
+            <span class="quick-text">Referenzen<small>Echte Kundenprojekte aus der Region</small></span>
+          </span>
           <span class="arrow">→</span>
         </a>
       </div>
@@ -796,6 +931,49 @@
             </ul>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="vorher-nachher">
+      <div class="container">
+        <div class="section-head">
+          <h2>Vorher / Nachher: strukturiert zum sauberen Ergebnis.</h2>
+          <p>Schon in der Vorbereitung arbeiten wir mit klaren Abläufen, Schutzmaßnahmen und sauberer Leitungsplanung. Das spart Zeit, reduziert Fehler und sorgt für ein ruhiges Gesamtbild nach der Montage.</p>
+        </div>
+
+        <div class="before-after-wrap">
+          <article class="ba-card">
+            <div class="media">
+              <img src="img/project-09.jpg" alt="Vorbereitung eines Innenraums mit Abdeckung vor der Klimamontage" />
+            </div>
+            <div class="copy">
+              <h3>Vorher: Vorbereitung &amp; Schutz</h3>
+              <p>Bevor die Technik eingebaut wird, sichern wir den Arbeitsbereich mit Schutzfolien und decken Möbel sowie Laufwege ab. Leitungswege werden vorab festgelegt, damit die Umsetzung geordnet startet.</p>
+            </div>
+          </article>
+
+          <article class="ba-card">
+            <div class="media">
+              <img src="img/project-01.jpg" alt="Fertig installierte Klimaanlage in einem modernen Innenraum" />
+            </div>
+            <div class="copy">
+              <h3>Nachher: sauber montiert &amp; übergeben</h3>
+              <p>Nach der Installation ist die Anlage exakt ausgerichtet, die Leitungsführung stimmig integriert und der Bereich gereinigt. So entsteht ein professionelles Ergebnis, das technisch und optisch überzeugt.</p>
+            </div>
+          </article>
+        </div>
+
+        <article class="detail-box">
+          <h3>So arbeiten wir bei jedem Projekt mit Ordnung und Struktur</h3>
+          <p>Jede Umsetzung folgt einem klaren Ablauf: Erst analysieren wir das Objekt, dann planen wir Positionen und Leitungswege mit Blick auf Funktion, Lautstärke und Optik. Während der Montage bleibt der Bereich geschützt und organisiert. Zum Abschluss testen wir die Anlage unter Last, erklären die Bedienung Schritt für Schritt und dokumentieren die ausgeführten Arbeiten transparent.</p>
+          <ul class="process-list">
+            <li><strong>Bestandsaufnahme:</strong> Raumgröße, Nutzung, Wärmelast und technische Voraussetzungen werden exakt erfasst.</li>
+            <li><strong>Planung:</strong> Gerätepositionen, Leitungswege und Außenaufstellung werden sinnvoll und sauber abgestimmt.</li>
+            <li><strong>Montage mit Schutz:</strong> Arbeitsflächen werden abgedeckt, Installationsschritte koordiniert und ordentlich ausgeführt.</li>
+            <li><strong>Inbetriebnahme:</strong> Dichtheit, Leistung, Geräuschverhalten und Steuerung werden geprüft und feinjustiert.</li>
+            <li><strong>Übergabe:</strong> Klare Einweisung, dokumentierte Arbeitsschritte und verbindliche Hinweise zu Wartung und Betrieb.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
