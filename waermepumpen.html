@@ -953,6 +953,96 @@
     }
 
 
+
+    /* Device optimization (mobile, tablet, desktop) */
+    @media (max-width: 1199.98px) {
+      .km-photo-wrap,
+      .km-contact-image {
+        aspect-ratio: 16 / 10;
+      }
+
+      .km-photo-wrap img,
+      .km-contact-image {
+        object-position: center center;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      body {
+        overflow-x: hidden;
+        padding-bottom: 82px;
+      }
+
+      .km-brand {
+        max-width: calc(100vw - 92px);
+      }
+
+      .km-brand-copy {
+        min-width: 0;
+      }
+
+      .km-brand-copy strong {
+        font-size: clamp(17px, 5.1vw, 23px) !important;
+        line-height: 1.05;
+      }
+
+      .km-brand-copy small {
+        font-size: clamp(9px, 2.5vw, 11px) !important;
+        letter-spacing: 0.08em;
+      }
+
+      .km-brand-main::before,
+      .km-brand-main::after,
+      .km-brand-main .km-flurry {
+        display: none;
+      }
+
+      .module-three-boxes .item.km-shortcut {
+        min-height: 0;
+        padding: 14px 12px;
+      }
+
+      .module-three-boxes .item.km-shortcut p {
+        font-size: 18px !important;
+        line-height: 1.2;
+      }
+
+      .km-before-after-card .image {
+        aspect-ratio: 4 / 3;
+      }
+
+      .km-before-after-card .copy {
+        padding: 16px 14px;
+      }
+
+      .km-slideshow {
+        aspect-ratio: 4 / 3;
+      }
+
+      .km-slide img {
+        object-fit: contain;
+        background: #0c1d2d;
+      }
+
+      .mobile-cta span {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .km-brand-mark {
+        font-size: 38px !important;
+      }
+
+      .page-header .header-item.km-hero .content h2 {
+        font-size: 30px;
+      }
+
+      .page-header .header-item.km-hero .content .km-hero-copy {
+        font-size: 18px !important;
+      }
+    }
+
   </style>
 </head>
 <body class="front-page no-transitions page-waermepumpen">
@@ -1439,7 +1529,7 @@
               <div class="row">
                 <div class="col-lg-10 offset-lg-2">
                   <h2 class="mt-2 mt-lg-3">Persönliche Betreuung</h2>
-                  <p>Sie erhalten ein klares Angebot, eine verbindliche Abstimmung der Montage und eine nachvollziehbare Übergabe. Genau so gehen wir bei jedem Projekt vor.</p>
+                  <p>Sie erhalten eine transparente Beratung, eine verbindliche Terminplanung und eine sauber dokumentierte Übergabe. So bleiben Ablauf, Kosten und Ergebnisse jederzeit nachvollziehbar.</p>
                 </div>
               </div>
             </div>
