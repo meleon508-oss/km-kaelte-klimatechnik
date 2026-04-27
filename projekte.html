@@ -702,72 +702,6 @@
     #projekte h3 {
       margin-bottom: 1rem;
     }
-
-    .km-reference-overview {
-      margin-top: 2.8rem;
-      border-top: 1px solid #d6e2ec;
-      padding-top: 1.6rem;
-    }
-
-    .km-reference-overview h4 {
-      color: #173047;
-      font-size: 33px;
-      margin-bottom: 0.55rem;
-    }
-
-    .km-reference-overview p {
-      color: #5d6f7d;
-      font-size: 18px;
-      margin-bottom: 1rem;
-    }
-
-    .km-reference-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .km-ref-card {
-      background: #fff;
-      border: 1px solid #d6e3ef;
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-      height: 100%;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .km-ref-image {
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      background: #e7f0f9;
-    }
-
-    .km-ref-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: var(--km-image-pos, center center);
-      display: block;
-    }
-
-    .km-ref-copy {
-      padding: 0.85rem 0.95rem 1rem;
-    }
-
-    .km-ref-copy h5 {
-      font-size: 21px;
-      color: #173047;
-      margin-bottom: 0.35rem;
-      line-height: 1.25;
-    }
-
-    .km-ref-copy p {
-      font-size: 16px;
-      line-height: 1.45;
-      margin: 0;
-      color: #60717f;
-    }
-
     .km-contact-image {
       width: 100%;
       border-radius: 8px;
@@ -934,24 +868,18 @@
         font-size: 26px;
       }
     }
-
-    @media (max-width: 1199px) {
-      .km-reference-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 767px) {
-      .km-reference-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .km-reference-overview h4 {
-        font-size: 28px;
-      }
-    }
     body.page-projekte #einsatzbereiche,
     body.page-projekte #leistungen {
+      display: none;
+    }
+
+  
+    /* KM page hero identity */
+    body.page-projekte .page-header .header-item.km-hero {
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.58) 58%, rgba(0, 0, 0, 0.22) 100%), url("img/project-06.jpg") center 43% / cover no-repeat;
+    }
+
+    body.page-projekte .page-header .header-item.km-hero .km-hero-video {
       display: none;
     }
 
@@ -1314,10 +1242,11 @@
       </section>
 
       
+      
       <section id="projekte" class="py-4 py-lg-7">
         <div class="container">
-          <h3>Projektbeispiele mit passender Zuordnung</h3>
-          <p class="mb-4">Jeder Block kombiniert den passenden Text mit den dazugehörigen Bildern aus demselben Leistungskontext.</p>
+          <h3>Projektbeispiele mit klarer Zuordnung</h3>
+          <p class="mb-4">Jedes Bild ist einem konkreten Leistungsabschnitt zugeordnet. So ist sofort erkennbar, welche Umsetzung zu welcher Technik- und Textpassage gehört.</p>
 
           <div class="row">
             <div class="col-12 col-lg-6 d-flex">
@@ -1349,74 +1278,43 @@
 
           <div class="row">
             <div class="col-12 col-lg-6 d-flex">
+              <div class="km-photo-wrap" style="--km-image-pos: center 57%;">
+                <img src="img/project-13.jpg" alt="Außeneinheit an Backsteinfassade mit Leitungsführung" />
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start pl-lg-6">
+              <h3 class="mt-2 mt-lg-0">Leitungsbild an Bestandsfassaden</h3>
+              <h5>Saubere Rohrführung trotz schwieriger Geometrie</h5>
+              <p>Bei Bestandsfassaden stimmen wir Leitungsachsen, Halterung und Verlauf so ab, dass Wartung möglich bleibt und das Fassadenbild geordnet wirkt.</p>
+              <p><a class="btn btn-outline-primary text-uppercase btn-icon-arrow-right-border" href="montage.html#bestand">Bestandslösung planen</a></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start order-2 order-lg-1 pr-lg-6">
+              <h3 class="mt-2 mt-lg-0">Nachrüstung im Backsteinobjekt</h3>
+              <h5>Technische Integration ohne unnötige Eingriffe</h5>
+              <p>Im Bestandsobjekt wird die Anlage in vorhandene Strukturen eingebunden. Entscheidend sind eine klare Vorplanung und ein wartungsfreundlicher Zugang.</p>
+              <p><a class="btn btn-outline-primary text-uppercase btn-icon-arrow-right-border" href="montage.html#bestand">Nachrüstung anfragen</a></p>
+            </div>
+            <div class="col-12 col-lg-6 d-flex order-1 order-lg-2">
               <div class="km-photo-wrap" style="--km-image-pos: center 46%;">
                 <img src="img/project-12.jpg" alt="Außeneinheit an Backsteinfassade im Bestandsobjekt" />
               </div>
             </div>
-            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start pl-lg-6">
-              <h3 class="mt-2 mt-lg-0">Bestandsobjekte und Nachrüstung</h3>
-              <h5>Technische Lösung ohne unnötige Eingriffe</h5>
-              <p>Auch in Bestandsgebäuden integrieren wir die Anlage mit minimalen Eingriffen in die Substanz. Die Planung berücksichtigt dabei Zugang, Schall und Wartung.</p>
-              <p><a class="btn btn-outline-primary text-uppercase btn-icon-arrow-right-border" href="montage.html#bestand">Nachrüstung anfragen</a></p>
-            </div>
           </div>
 
-          <div class="km-reference-overview">
-            <h4>Komplette Referenzgalerie: alle 13 Kundenbilder</h4>
-            <p>Hier sind alle von dir gelieferten Bilder fachlich zugeordnet. So sieht man auf einen Blick Innenmontage, Vorher/Nachher und Außenaufstellungen.</p>
-            <div class="km-reference-grid">
-              <article class="km-ref-card">
-                <div class="km-ref-image"><img src="img/project-01.jpg" alt="Inneneinheit, final montiert" /></div>
-                <div class="km-ref-copy"><h5>01 · Innenmontage final</h5><p>Sauber integrierte Inneneinheit im Wohnbereich.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image"><img src="img/project-02.jpg" alt="Wohnbereich mit Innengerät" /></div>
-                <div class="km-ref-copy"><h5>02 · Wohnlösung</h5><p>Komfortkühlung im Wohnraum mit ruhigem Betrieb.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image" style="--km-image-pos:center 58%;"><img src="img/project-03.jpg" alt="Leitungsführung außen mit Außeneinheit" /></div>
-                <div class="km-ref-copy"><h5>03 · Leitungsführung außen</h5><p>Geordnete Trassenführung an der Fassade.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image"><img src="img/project-04.jpg" alt="Innengerät im Dachgeschoss" /></div>
-                <div class="km-ref-copy"><h5>04 · Dachgeschoss innen</h5><p>Nachrüstung im Bestand mit sauberem Wandbild.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image"><img src="img/project-05.jpg" alt="Nachher: fertig montierter Raum" /></div>
-                <div class="km-ref-copy"><h5>05 · Nachher-Zustand</h5><p>Projektabschluss nach strukturierter Montage.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image"><img src="img/project-06.jpg" alt="Außeneinheit auf Dachkonsolen" /></div>
-                <div class="km-ref-copy"><h5>06 · Dachaufstellung</h5><p>Technisch sichere Montage auf dem Dach.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image"><img src="img/project-07.jpg" alt="Hausfassade mit außen montierter Einheit" /></div>
-                <div class="km-ref-copy"><h5>07 · Außenansicht Objekt</h5><p>Außeneinheit am Gebäude mit sauberem Umfeld.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image"><img src="img/project-08.jpg" alt="Schwarze Außeneinheit auf Dach" /></div>
-                <div class="km-ref-copy"><h5>08 · Spezielle Dacheinheit</h5><p>Dachmontage mit robuster Trägerkonstruktion.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image"><img src="img/project-09.jpg" alt="Vorher-Zustand mit Schutzfolien" /></div>
-                <div class="km-ref-copy"><h5>09 · Vorher-Zustand</h5><p>Vorbereitung mit Schutzmaßnahmen und Struktur.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image"><img src="img/project-10.jpg" alt="Bodennahe Außeneinheit an heller Fassade" /></div>
-                <div class="km-ref-copy"><h5>10 · Bodennahe Außenmontage</h5><p>Servicefreundliche Aufstellung nahe Gebäudesockel.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image"><img src="img/project-11.jpg" alt="Daikin Außeneinheit an Fassade" /></div>
-                <div class="km-ref-copy"><h5>11 · Fassadenlösung hell</h5><p>Außenmontage mit klar geführter Leitungsachse.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image" style="--km-image-pos:center 44%;"><img src="img/project-12.jpg" alt="Backsteinobjekt mit Außeneinheit" /></div>
-                <div class="km-ref-copy"><h5>12 · Backstein-Bestandsobjekt</h5><p>Nachrüstung in bestehender Gebäudestruktur.</p></div>
-              </article>
-              <article class="km-ref-card">
-                <div class="km-ref-image" style="--km-image-pos:center 57%;"><img src="img/project-13.jpg" alt="Außeneinheit an Backsteinfassade mit Leitungsführung" /></div>
-                <div class="km-ref-copy"><h5>13 · Leitungsbild Backstein</h5><p>Saubere Rohrführung bei anspruchsvoller Fassade.</p></div>
-              </article>
+          <div class="row">
+            <div class="col-12 col-lg-6 d-flex">
+              <div class="km-photo-wrap" style="--km-image-pos: center 50%;">
+                <img src="img/project-10.jpg" alt="Bodennahe Außeneinheit an heller Fassade" />
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start pl-lg-6">
+              <h3 class="mt-2 mt-lg-0">Bodennahe Außenaufstellung</h3>
+              <h5>Servicefreundliche Position mit stabilem Fundament</h5>
+              <p>Bodennahe Einheiten ermöglichen kurze Wege für Wartung und Reparatur. Mit passender Platzierung bleibt die Anlage gut zugänglich und sicher befestigt.</p>
+              <p><a class="btn btn-outline-primary text-uppercase btn-icon-arrow-right-border" href="service.html#wartung">Service dazu anfragen</a></p>
             </div>
           </div>
         </div>
