@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KM Kälte-Klimatechnik | Projekte</title>
+  <title>KM Kälte-Klimatechnik | Klimatechnik</title>
   <meta name="description" content="KM Kälte-Klimatechnik: Planung, Einbau, Wartung und Reparatur von Klima- und Kältetechnik für Privat und Gewerbe." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -869,14 +869,85 @@
         font-size: 26px;
       }
     }
-    body.page-projekte #einsatzbereiche,
-    body.page-projekte #leistungen {
+
+    body.page-klimatechnik #einsatzbereiche,
+    body.page-klimatechnik #leistungen,
+    body.page-klimatechnik #vorher-nachher,
+    body.page-klimatechnik #projekte {
       display: none;
     }
 
+    .km-detail-page-content {
+      padding: 8px 0 18px;
+    }
+
+    .km-detail-page-content h3 {
+      color: #173047;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .km-detail-page-content h4 {
+      color: #1f4d6b;
+      font-size: 25px;
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    .km-detail-page-content p {
+      font-size: 19px;
+      color: #5e6f7d;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .km-detail-list {
+      margin: 0;
+      padding-left: 20px;
+      color: #5e6f7d;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .km-detail-list li {
+      margin-bottom: 7px;
+    }
+
+    .km-detail-box {
+      border: 1px solid #d6e3ef;
+      background: #fff;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .km-detail-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .km-detail-cta {
+      margin-top: 16px;
+    }
+
+    @media (max-width: 991px) {
+      .km-detail-page-content h3 {
+        font-size: 30px;
+      }
+
+      .km-detail-page-content h4 {
+        font-size: 23px;
+      }
+
+      .km-detail-page-content p,
+      .km-detail-list {
+        font-size: 17px;
+      }
+    }
+
+
   </style>
 </head>
-<body class="front-page no-transitions page-projekte">
+<body class="front-page no-transitions page-klimatechnik">
   <section class="d-none d-lg-flex flex-wrap flex-column align-items-end" id="window-sidebar">
     <div class="position-relative mb-1">
       <a href="kontakt.html#kontakt" class="text-decoration-none">
@@ -983,9 +1054,9 @@
             <source src="media/hero-air-conditioning.mp4" type="video/mp4" />
           </video>
           <div class="container content">
-            <h1 class="headline-small">Projektbeispiele Düsseldorf &amp; Umgebung</h1>
-            <h2>Echte Referenzen aus der Praxis.</h2>
-            <p class="km-hero-copy">Hier sehen Sie ausgewählte Vorher-Nachher-Projekte und Referenzen aus dem Alltag: sauber geplant, strukturiert montiert und nachvollziehbar übergeben.</p>
+            <h1 class="headline-small">Klimatechnik Düsseldorf &amp; Umgebung</h1>
+            <h2>Kühlen, temperieren und stabil regeln.</h2>
+            <p class="km-hero-copy">Wir planen Klimasysteme so, dass Leistung, Schall und Regelung zusammenpassen. Das Ergebnis ist ein stabiles Raumklima bei wirtschaftlichem Betrieb.</p>
             <p class="km-hero-actions">
               <a class="btn btn-primary btn-icon-arrow-right-border" href="kontakt.html#kontakt">Beratung anfragen</a>
               <a class="btn btn-outline-white btn-icon-arrow-right-border" href="tel:015208598997">Direkt anrufen</a>
@@ -1026,13 +1097,63 @@
       </div>
 
       <div class="container container-small mb-3 mb-lg-6 km-intro-copy">
-        <h2 class="text-primary font-weight-medium">Projekte &amp; Referenzen</h2>
-        <p class="lead">Diese Seite bündelt echte Kundenprojekte mit klarer Zuordnung zu Leistung und Einbausituation - für einen transparenten Eindruck unserer Arbeit.</p>
-        <p>So sehen Sie auf einen Blick, wie wir in Wohnobjekten und Bestandsgebäuden technisch sauber und optisch stimmig umsetzen.</p>
+        <h2 class="text-primary font-weight-medium">Klimatechnik im Detail</h2>
+        <p class="lead">Von Split-Anlagen bis zur geregelten Zonenlösung: wir stimmen Systemaufbau und Regelstrategie auf Ihr Objekt ab.</p>
+        <p>Alle Komponenten werden so gewählt, dass Betrieb, Wartung und spätere Erweiterung nachvollziehbar bleiben.</p>
         <p>
           <a class="btn btn-primary btn-icon-arrow-right-border" href="kontakt.html#kontakt">Beratung anfragen</a>
         </p>
       </div>
+
+
+      <section class="module km-detail-page-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <h3>Technisch saubere Klimalösungen</h3>
+              <p>Eine gute Anlage beginnt bei der richtigen Lastberechnung und endet bei einer sauberen Inbetriebnahme mit dokumentierten Sollwerten.</p>
+
+              <div class="km-detail-box" id="klimaanlagen">
+                <h4>Klimaanlagen &amp; Innengeräte</h4>
+                <ul class="km-detail-list">
+                  <li>Auslegung nach tatsächlicher Kühllast statt Pauschalwerten</li>
+                  <li>Geräteauswahl nach Raumtyp, Geräuschanforderung und Optik</li>
+                  <li>Inbetriebnahme mit Funktionsprüfung aller Betriebsmodi</li>
+                </ul>
+              </div>
+
+              <div class="km-detail-box" id="kaeltetechnik">
+                <h4>Kältetechnik im Bestand</h4>
+                <p>Bei Nachrüstungen prüfen wir vorhandene Leitungswege, mögliche Durchführungen und die optimale Position der Außeneinheit.</p>
+                <ul class="km-detail-list">
+                  <li>Bestandsaufnahme vor Ort inkl. Leitungs- und Wandaufbau</li>
+                  <li>Saubere Trassenführung mit wartungsfreundlichem Zugang</li>
+                  <li>Dokumentierte Übergabe mit klaren Bedienhinweisen</li>
+                </ul>
+              </div>
+
+              <div class="km-detail-box" id="steuerung">
+                <h4>Regelung &amp; Klimasteuerung</h4>
+                <ul class="km-detail-list">
+                  <li>Temperaturführung pro Zone</li>
+                  <li>Zeitprogramme nach Nutzung</li>
+                  <li>Betriebsoptimierung zur Senkung unnötiger Laufzeiten</li>
+                </ul>
+              </div>
+
+              <p class="km-detail-cta"><a class="btn btn-primary btn-icon-arrow-right-border" href="kontakt.html#kontakt">Klimatechnik planen</a></p>
+            </div>
+            <div class="col-lg-5">
+              <div class="km-photo-wrap mb-2">
+                <img src="img/project-01.jpg" alt="Innengerät in modernem Raum" />
+              </div>
+              <div class="km-photo-wrap">
+                <img src="img/project-04.jpg" alt="Anlage im Dachgeschoss" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="module module-list-image-text horizontal company-details mt-3 mt-lg-5">
         <ul class="list-unstyled">
