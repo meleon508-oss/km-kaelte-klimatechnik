@@ -702,6 +702,77 @@
     #projekte h3 {
       margin-bottom: 1rem;
     }
+
+
+    /* Customer slideshow (original customer images) */
+    .km-customer-slideshow {
+      border-top: 1px solid #d6e2ec;
+      border-bottom: 1px solid #d6e2ec;
+      background: #f8fbfe;
+    }
+
+    .km-customer-slideshow h3 {
+      color: #173047;
+      margin-bottom: 0.4rem;
+    }
+
+    .km-customer-slideshow p {
+      color: #5f7080;
+      margin-bottom: 0.9rem;
+    }
+
+    .km-slideshow {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #dfeaf4;
+      border: 1px solid #cddceb;
+      box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.12);
+    }
+
+    .km-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+      pointer-events: none;
+    }
+
+    .km-slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .km-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .km-slide figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.7rem 0.9rem;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.72) 100%);
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      .km-slide figcaption {
+        font-size: 14px;
+      }
+    }
+
+
     .km-contact-image {
       width: 100%;
       border-radius: 8px;
@@ -1084,7 +1155,7 @@
             <div class="km-solution-grid">
               <article class="solution-slide swiper-slide">
                 <div class="solution-image-container">
-                  <img src="img/project-02.jpg" alt="Klimaanlage im Wohnbereich" />
+                  <img src="img/stock/stock-hyundai-mini-split.jpg" alt="Klimaanlage im Wohnbereich" />
                 </div>
                 <div class="solution-content-container shadow p-1 d-flex flex-column justify-content-between h-100">
                   <div class="solution-content-text-excerpt-container">
@@ -1097,7 +1168,7 @@
 
               <article class="solution-slide swiper-slide">
                 <div class="solution-image-container">
-                  <img src="img/project-04.jpg" alt="Klimaanlage im Dachgeschoss" />
+                  <img src="img/stock/stock-bedroom-unit.jpg" alt="Klimaanlage im Dachgeschoss" />
                 </div>
                 <div class="solution-content-container shadow p-1 d-flex flex-column justify-content-between h-100">
                   <div class="solution-content-text-excerpt-container">
@@ -1110,7 +1181,7 @@
 
               <article class="solution-slide swiper-slide">
                 <div class="solution-image-container">
-                  <img src="img/project-06.jpg" alt="Außeneinheit auf Dach" />
+                  <img src="img/stock/stock-panasonic-outdoor.jpg" alt="Außeneinheit auf Dach" />
                 </div>
                 <div class="solution-content-container shadow p-1 d-flex flex-column justify-content-between h-100">
                   <div class="solution-content-text-excerpt-container">
@@ -1123,7 +1194,7 @@
 
               <article class="solution-slide swiper-slide">
                 <div class="solution-image-container">
-                  <img src="img/project-08.jpg" alt="Außeneinheit am Gebäude" />
+                  <img src="img/stock/stock-exterior-dual.jpg" alt="Außeneinheit am Gebäude" />
                 </div>
                 <div class="solution-content-container shadow p-1 d-flex flex-column justify-content-between h-100">
                   <div class="solution-content-text-excerpt-container">
@@ -1158,7 +1229,7 @@
             </div>
             <div class="col-12 col-lg-6 d-flex order-1 order-lg-2">
               <div class="km-photo-wrap is-top">
-                <img src="img/project-01.jpg" alt="Fertig installierte Inneneinheit" />
+                <img src="img/stock/stock-panasonic-indoor.jpg" alt="Fertig installierte Inneneinheit" />
               </div>
             </div>
           </div>
@@ -1166,7 +1237,7 @@
           <div class="row mb-4 mb-lg-7">
             <div class="col-12 col-lg-6">
               <div class="km-photo-wrap is-portrait" style="--km-image-pos: center 71%;">
-                <img src="img/project-03.jpg" alt="Leitungsführung und Außeneinheit an Fassade" />
+                <img src="img/stock/stock-wall-mounted-friedrich.jpg" alt="Leitungsführung und Außeneinheit an Fassade" />
               </div>
             </div>
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center px-lg-4">
@@ -1193,7 +1264,7 @@
             </div>
             <div class="col-12 col-lg-6 d-flex order-1 order-lg-2">
               <div class="km-photo-wrap">
-                <img src="img/project-06.jpg" alt="Außeneinheit auf Dach mit Halterung" />
+                <img src="img/stock/stock-panasonic-outdoor.jpg" alt="Außeneinheit auf Dach mit Halterung" />
               </div>
             </div>
           </div>
@@ -1250,7 +1321,7 @@
           <div class="row">
             <div class="col-12 col-lg-6 d-flex">
               <div class="km-photo-wrap is-top">
-                <img src="img/project-02.jpg" alt="Inneneinheit im Wohnraum" />
+                <img src="img/stock/stock-hyundai-mini-split.jpg" alt="Inneneinheit im Wohnraum" />
               </div>
             </div>
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start pl-lg-6">
@@ -1270,7 +1341,7 @@
             </div>
             <div class="col-12 col-lg-6 d-flex order-1 order-lg-2">
               <div class="km-photo-wrap" style="--km-image-pos: center 57%;">
-                <img src="img/project-11.jpg" alt="Daikin Außeneinheit an heller Fassade" />
+                <img src="img/stock/stock-panasonic-outdoor.jpg" alt="Außeneinheit an Fassade" />
               </div>
             </div>
           </div>
@@ -1278,11 +1349,11 @@
           <div class="row">
             <div class="col-12 col-lg-6 d-flex">
               <div class="km-photo-wrap" style="--km-image-pos: center 57%;">
-                <img src="img/project-13.jpg" alt="Außeneinheit an Backsteinfassade mit Leitungsführung" />
+                <img src="img/stock/stock-wall-mounted-friedrich.jpg" alt="Außeneinheit an Backsteinfassade mit Leitungsführung" />
               </div>
             </div>
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start pl-lg-6">
-              <h3 class="mt-2 mt-lg-0">Leitungsbild an Bestandsfassaden</h3>
+              <h3 class="mt-2 mt-lg-0">Leitungsführung am Bestandsobjekt</h3>
               <h5>Saubere Rohrführung trotz schwieriger Geometrie</h5>
               <p>Bei Bestandsfassaden stimmen wir Leitungsachsen, Halterung und Verlauf so ab, dass Wartung möglich bleibt und das Fassadenbild geordnet wirkt.</p>
               <p><a class="btn btn-outline-primary text-uppercase btn-icon-arrow-right-border" href="montage.html#bestand">Bestandslösung planen</a></p>
@@ -1298,7 +1369,7 @@
             </div>
             <div class="col-12 col-lg-6 d-flex order-1 order-lg-2">
               <div class="km-photo-wrap" style="--km-image-pos: center 46%;">
-                <img src="img/project-12.jpg" alt="Außeneinheit an Backsteinfassade im Bestandsobjekt" />
+                <img src="img/stock/stock-exterior-dual.jpg" alt="Außeneinheit am Bestandsobjekt" />
               </div>
             </div>
           </div>
@@ -1306,7 +1377,7 @@
           <div class="row">
             <div class="col-12 col-lg-6 d-flex">
               <div class="km-photo-wrap" style="--km-image-pos: center 50%;">
-                <img src="img/project-10.jpg" alt="Bodennahe Außeneinheit an heller Fassade" />
+                <img src="img/stock/stock-condenser-house.jpg" alt="Bodennahe Außeneinheit an heller Fassade" />
               </div>
             </div>
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start pl-lg-6">
@@ -1315,6 +1386,61 @@
               <p>Bodennahe Einheiten ermöglichen kurze Wege für Wartung und Reparatur. Mit passender Platzierung bleibt die Anlage gut zugänglich und sicher befestigt.</p>
               <p><a class="btn btn-outline-primary text-uppercase btn-icon-arrow-right-border" href="service.html#wartung">Service dazu anfragen</a></p>
             </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="kundenbilder" class="km-customer-slideshow py-4 py-lg-6">
+        <div class="container">
+          <h3>Kundenbilder im Wechsel</h3>
+          <p>Originale Kundenfotos aus realen Projekten. Diese Bilder laufen als Slideshow und dienen als echte Referenzvisualisierung.</p>
+          <div class="km-slideshow" data-km-slideshow aria-live="polite">
+            <figure class="km-slide is-active">
+              <img src="img/project-01.jpg" alt="Kundenbild: Inneneinheit fertig montiert" />
+              <figcaption>Inneneinheit fertig montiert im Wohnbereich</figcaption>
+            </figure>
+            <figure class="km-slide">
+              <img src="img/project-02.jpg" alt="Kundenbild: Wohnraum mit Klimaanlage" />
+              <figcaption>Wohnraumlösung mit ruhigem Betrieb</figcaption>
+            </figure>
+            <figure class="km-slide">
+              <img src="img/project-03.jpg" alt="Kundenbild: Leitungsführung an Fassade" />
+              <figcaption>Leitungsführung und Außenanbindung am Objekt</figcaption>
+            </figure>
+            <figure class="km-slide">
+              <img src="img/project-04.jpg" alt="Kundenbild: Nachrüstung im Dachgeschoss" />
+              <figcaption>Nachrüstung im Bestand, sauber integriert</figcaption>
+            </figure>
+            <figure class="km-slide">
+              <img src="img/project-06.jpg" alt="Kundenbild: Außeneinheit auf Dach" />
+              <figcaption>Dachaufstellung mit stabiler Halterung</figcaption>
+            </figure>
+            <figure class="km-slide">
+              <img src="img/project-07.jpg" alt="Kundenbild: Außeneinheit am Haus" />
+              <figcaption>Außenansicht mit geordneter Leitungsführung</figcaption>
+            </figure>
+            <figure class="km-slide">
+              <img src="img/project-08.jpg" alt="Kundenbild: schwarze Außeneinheit auf Dach" />
+              <figcaption>Spezielle Dachmontage mit schwarzer Außeneinheit</figcaption>
+            </figure>
+            <figure class="km-slide">
+              <img src="img/project-10.jpg" alt="Kundenbild: bodennahe Außeneinheit" />
+              <figcaption>Bodennahe Außenaufstellung, servicefreundlich</figcaption>
+            </figure>
+            <figure class="km-slide">
+              <img src="img/project-11.jpg" alt="Kundenbild: Außeneinheit an heller Fassade" />
+              <figcaption>Fassadenmontage mit klarer Trassenführung</figcaption>
+            </figure>
+            <figure class="km-slide">
+              <img src="img/project-12.jpg" alt="Kundenbild: Außeneinheit im Backsteinobjekt" />
+              <figcaption>Nachrüstung im Backstein-Bestandsobjekt</figcaption>
+            </figure>
+            <figure class="km-slide">
+              <img src="img/project-13.jpg" alt="Kundenbild: Außenmontage an Backsteinfassade" />
+              <figcaption>Außenmontage mit sauberer Leitungsachse</figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -1346,7 +1472,7 @@
             </div>
 
             <div class="col-xl-6 offset-xl-1 mt-3 mt-xl-0 cp-offset-col">
-              <img class="km-contact-image" src="img/project-04.jpg" alt="Projektbild aus dem Innenbereich" />
+              <img class="km-contact-image" src="img/stock/stock-bedroom-unit.jpg" alt="Projektbild aus dem Innenbereich" />
               <div class="row">
                 <div class="col-lg-10 offset-lg-2">
                   <h2 class="mt-2 mt-lg-3">Persönliche Betreuung</h2>
@@ -1478,6 +1604,24 @@
           menuBtn.setAttribute("aria-expanded", "false");
         });
       });
+
+
+    (function () {
+      var sliders = document.querySelectorAll('[data-km-slideshow]');
+      if (!sliders.length) return;
+
+      sliders.forEach(function (slider) {
+        var slides = Array.prototype.slice.call(slider.querySelectorAll('.km-slide'));
+        if (slides.length < 2) return;
+
+        var current = 0;
+        setInterval(function () {
+          slides[current].classList.remove('is-active');
+          current = (current + 1) % slides.length;
+          slides[current].classList.add('is-active');
+        }, 3300);
+      });
+    })();
     })();
   </script>
 </body>
