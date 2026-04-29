@@ -1116,7 +1116,7 @@
     <main id="top">
       <section class="page-header">
         <div class="header-item has-content km-hero">
-          <video class="km-hero-video" autoplay muted playsinline preload="metadata" poster="img/hero-house.jpg" aria-hidden="true" data-km-hero-playlist="media/hero-air-conditioning.mp4,media/hero-air-conditioning-2.mp4,media/hero-air-conditioning-3.mp4,media/hero-air-conditioning-4.mp4">
+          <video class="km-hero-video" autoplay muted loop playsinline preload="auto" poster="img/hero-house.jpg" aria-hidden="true">
             <source src="media/hero-air-conditioning.mp4" type="video/mp4" />
           </video>
           <div class="container content">
@@ -1588,48 +1588,6 @@
         link.addEventListener("click", function () {
           mobileNav.classList.remove("open");
           menuBtn.setAttribute("aria-expanded", "false");
-        });
-      });
-    })();
-  </script>
-
-  <script>
-    (function () {
-      var heroVideos = document.querySelectorAll('.km-hero-video[data-km-hero-playlist]');
-      if (!heroVideos.length) return;
-
-      heroVideos.forEach(function (video) {
-        var raw = video.getAttribute('data-km-hero-playlist') || '';
-        var items = raw.split(',').map(function (entry) { return entry.trim(); }).filter(Boolean);
-        if (!items.length) return;
-
-        var current = 0;
-        var source = video.querySelector('source');
-
-        var setRate = function () {
-          video.defaultPlaybackRate = 0.82;
-          video.playbackRate = 0.82;
-        };
-
-        setRate();
-        video.addEventListener('play', setRate);
-
-        video.addEventListener('ended', function () {
-          current = (current + 1) % items.length;
-
-          if (source) {
-            source.setAttribute('src', items[current]);
-          } else {
-            video.setAttribute('src', items[current]);
-          }
-
-          video.load();
-          setRate();
-
-          var promise = video.play();
-          if (promise && typeof promise.catch === 'function') {
-            promise.catch(function () {});
-          }
         });
       });
     })();
