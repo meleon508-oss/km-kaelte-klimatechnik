@@ -416,16 +416,16 @@
       object-position: center 54%;
       z-index: 0;
       background: transparent;
-      mix-blend-mode: screen;
-      filter: brightness(1.6) saturate(1.15) contrast(0.68);
-      opacity: 0.7;
+      mix-blend-mode: normal;
+      filter: none;
+      opacity: 1;
     }
 
     .page-header .header-item.km-hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255, 255, 255, 0);
+      background: transparent;
       z-index: 1;
     }
 
@@ -438,6 +438,16 @@
       padding-bottom: 70px;
       text-align: left;
       z-index: 2;
+    }
+
+    .page-header .header-item.km-hero .content .inner {
+      display: inline-block;
+      padding: 18px 20px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(5, 40, 67, 0.34) 0%, rgba(5, 40, 67, 0.16) 100%);
+      border: 1px solid rgba(173, 220, 244, 0.42);
+      box-shadow: 0 10px 22px rgba(7, 35, 58, 0.16);
+      backdrop-filter: blur(0.6px);
     }
 
     .page-header .header-item.km-hero .content h1,
@@ -844,6 +854,11 @@
     }
 
     @media (max-width: 767.98px) {
+      .page-header .header-item.km-hero .content .inner {
+        display: block;
+        padding: 14px 14px;
+      }
+
       .km-solution-grid {
         grid-template-columns: 1fr;
       }
@@ -970,7 +985,7 @@
 
     body.page-waermepumpen .page-header .header-item.km-hero .km-hero-video {
       display: block;
-      opacity: 0.84;
+      opacity: 1;
     }
 
 
