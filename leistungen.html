@@ -415,15 +415,17 @@
       object-fit: cover;
       object-position: center 54%;
       z-index: 0;
-      filter: brightness(1.45) saturate(1.12) contrast(0.72);
-      opacity: 0.84;
+      background: transparent;
+      mix-blend-mode: screen;
+      filter: brightness(1.6) saturate(1.15) contrast(0.68);
+      opacity: 0.7;
     }
 
     .page-header .header-item.km-hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(118deg, rgba(255, 255, 255, 0.08) 0%, rgba(232, 246, 255, 0.05) 47%, rgba(255, 255, 255, 0.02) 100%);
+      background: rgba(255, 255, 255, 0);
       z-index: 1;
     }
 
