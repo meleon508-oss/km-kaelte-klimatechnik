@@ -35,8 +35,9 @@
 
     .km-brand {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 1px;
       text-decoration: none;
     }
 
@@ -49,7 +50,7 @@
     .km-brand-mark {
       display: inline-block;
       font-family: "UnifrakturCook", serif;
-      font-size: 56px;
+      font-size: 44px;
       line-height: 1;
       color: #0f2a3f;
       -webkit-text-fill-color: #0f2a3f;
@@ -60,7 +61,7 @@
         0 3px 0 rgba(8, 37, 58, 0.88),
         0 4px 0 rgba(6, 27, 43, 0.82),
         0 10px 16px rgba(8, 38, 58, 0.36);
-      transform: translateY(2px);
+      transform: translateY(-1px);
       flex-shrink: 0;
     }
 
@@ -68,15 +69,15 @@
       display: inline-flex;
       flex-direction: column;
       line-height: 1.03;
-      padding: 0;
+      padding: 0 0 0 1px;
     }
 
     .km-brand-copy strong {
-      font-size: 27px;
-      letter-spacing: -0.02em;
+      font-size: 20px;
+      letter-spacing: 0.02em;
       color: #173850;
       -webkit-text-fill-color: #173850;
-      font-weight: 700;
+      font-weight: 800;
       display: inline-block;
       -webkit-text-stroke: 0.85px rgba(82, 202, 255, 0.9);
       text-shadow:
@@ -89,13 +90,20 @@
     .km-brand-copy small {
       margin-top: 3px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 11px;
+      letter-spacing: 0.1em;
+      font-size: 10px;
       color: #6a7781;
-      font-weight: 700;
+      font-weight: 800;
       display: inline-block;
       -webkit-text-stroke: 0.38px rgba(72, 187, 255, 0.42);
       text-shadow: 0 0 0 rgba(67, 183, 255, 0);
+    }
+
+    .km-brand-copy .km-brand-region {
+      margin-top: 2px;
+      letter-spacing: 0.14em;
+      font-size: 9px;
+      opacity: 0.95;
     }
 
     .km-brand-main .km-brand-mark {
@@ -774,9 +782,97 @@
       margin: 0;
     }
 
+    .km-reviews {
+      background: #ffffff;
+      border-top: 1px solid #d6e2ec;
+      border-bottom: 1px solid #d6e2ec;
+    }
+
+    .km-reviews h3 {
+      color: #173047;
+      margin-bottom: 0.4rem;
+    }
+
+    .km-reviews p {
+      color: #5f7080;
+    }
+
+    .km-review-deck {
+      position: relative;
+      min-height: 248px;
+      border: 1px solid #d5e2ef;
+      border-radius: 10px;
+      background: linear-gradient(155deg, #f8fbfe 0%, #eef5fc 100%);
+      box-shadow: 0 0.55rem 1.15rem rgba(8, 38, 58, 0.1);
+      overflow: hidden;
+    }
+
+    .km-review-card {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.62s ease;
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .km-review-card.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .km-review-stars {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0.18em;
+      color: #f0b400;
+    }
+
+    .km-review-title {
+      margin: 0;
+      color: #173047;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .km-review-text {
+      margin: 0;
+      color: #4f6373;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .km-review-meta {
+      margin: 2px 0 0;
+      color: #688093;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .km-review-link {
+      margin-top: 14px;
+    }
+
     @media (max-width: 767px) {
       .km-slide figcaption {
         font-size: 14px;
+      }
+
+      .km-review-deck {
+        min-height: 286px;
+      }
+
+      .km-review-title {
+        font-size: 21px;
+      }
+
+      .km-review-text {
+        font-size: 17px;
       }
     }
 
@@ -1014,8 +1110,8 @@
       }
 
       .km-slide img {
-        object-fit: contain;
-        background: #0c1d2d;
+        object-fit: cover;
+        background: transparent;
       }
 
       .mobile-cta span {
@@ -1037,9 +1133,13 @@
       }
     }
 
+    body.page-home #leistungen {
+      display: none;
+    }
+
   </style>
 </head>
-<body class="front-page no-transitions">
+<body class="front-page no-transitions page-home">
   <section class="d-none d-lg-flex flex-wrap flex-column align-items-end" id="window-sidebar">
     <div class="position-relative mb-1">
       <a href="kontakt.html#kontakt" class="text-decoration-none">
@@ -1093,10 +1193,11 @@
         <div class="row header-nav-row p-1">
           <div class="col-xl-3 header-first-col d-flex align-items-center justify-content-between">
             <a class="navbar-brand km-brand km-brand-main" href="index.html" aria-label="KM Kälte-Klimatechnik">
-              <span class="km-brand-mark">K</span>
+              <span class="km-brand-mark">KM</span>
               <span class="km-brand-copy">
-                <strong>M Kälte-Klimatechnik</strong>
-                <small>Düsseldorf / Umgebung</small>
+                <strong>Kälte- und Klimatechnik</strong>
+                <small>Meisterbetrieb</small>
+                <small class="km-brand-region">Düsseldorf / Umgebung</small>
               </span>
               <span class="km-flurry" aria-hidden="true">
                 <span class="km-flake f1">❄</span>
@@ -1569,6 +1670,61 @@
         </div>
       </section>
 
+      <section id="bewertungen" class="km-reviews py-4 py-lg-6">
+        <div class="container">
+          <h3>Google-Bewertungen</h3>
+          <p>Kundenstimmen aus Düsseldorf und Umgebung. Alle Bewertungen werden nacheinander eingeblendet.</p>
+
+          <div class="km-review-deck" data-km-review-rotator aria-live="polite">
+            <article class="km-review-card is-active">
+              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
+              <h4 class="km-review-title">Sehr saubere Ausführung</h4>
+              <p class="km-review-text">Rückmeldungen aus dem Google-Profil heben besonders die ordentliche Montage, klare Leitungsführung und den professionellen Gesamteindruck hervor.</p>
+              <p class="km-review-meta">Google Bewertung</p>
+            </article>
+
+            <article class="km-review-card">
+              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
+              <h4 class="km-review-title">Schnelle Reaktion</h4>
+              <p class="km-review-text">Mehrfach genannt werden zügige Rückmeldungen, verbindliche Terminabstimmung und eine transparente Kommunikation während des gesamten Einsatzes.</p>
+              <p class="km-review-meta">Google Bewertung</p>
+            </article>
+
+            <article class="km-review-card">
+              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
+              <h4 class="km-review-title">Freundlicher Service</h4>
+              <p class="km-review-text">Kunden loben den respektvollen Umgang vor Ort sowie die verständliche Erklärung der umgesetzten Technik und der nächsten Service-Schritte.</p>
+              <p class="km-review-meta">Google Bewertung</p>
+            </article>
+
+            <article class="km-review-card">
+              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
+              <h4 class="km-review-title">Technisch zuverlässig</h4>
+              <p class="km-review-text">In den Bewertungen wird die fachgerechte Inbetriebnahme mit stabil laufenden Anlagen und durchdachter Ausführung im Bestand besonders hervorgehoben.</p>
+              <p class="km-review-meta">Google Bewertung</p>
+            </article>
+
+            <article class="km-review-card">
+              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
+              <h4 class="km-review-title">Stark im Bestand</h4>
+              <p class="km-review-text">Mehrere Rezensionen betonen, dass Nachrüstungen mit hoher Sorgfalt, sauberem Schutz der Räume und klarer Struktur umgesetzt wurden.</p>
+              <p class="km-review-meta">Google Bewertung</p>
+            </article>
+
+            <article class="km-review-card">
+              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
+              <h4 class="km-review-title">Empfehlung aus Erfahrung</h4>
+              <p class="km-review-text">Wiederkehrend werden Zuverlässigkeit, Qualität und die insgesamt professionelle Arbeitsweise als Gründe für klare Weiterempfehlungen genannt.</p>
+              <p class="km-review-meta">Google Bewertung</p>
+            </article>
+          </div>
+
+          <p class="km-review-link mb-0">
+            <a class="btn btn-outline-primary btn-icon-arrow-right-border" href="https://www.google.com/search?q=KM+K%C3%A4lte-Klimatechnik+Meisterbetrieb+Rezensionen" target="_blank" rel="noopener noreferrer">Alle Google-Bewertungen ansehen</a>
+          </p>
+        </div>
+      </section>
+
       <section id="kontakt" class="module module-contactpersons-career bg-lightblue mt-lg-4 py-3 py-lg-6">
         <div class="container">
           <div class="row">
@@ -1614,10 +1770,11 @@
         <div class="row">
           <div class="col-lg-3 mb-3 mb-lg-0">
             <a class="navbar-brand km-brand mb-2" href="index.html">
-              <span class="km-brand-mark">K</span>
+              <span class="km-brand-mark">KM</span>
               <span class="km-brand-copy">
-                <strong>M Kälte-Klimatechnik</strong>
-                <small>Düsseldorf / Umgebung</small>
+                <strong>Kälte- und Klimatechnik</strong>
+                <small>Meisterbetrieb</small>
+                <small class="km-brand-region">Düsseldorf / Umgebung</small>
               </span>
             </a>
             <p class="mb-0">KM Kälte-Klimatechnik</p>
@@ -1744,6 +1901,23 @@
           current = (current + 1) % slides.length;
           slides[current].classList.add('is-active');
         }, 3300);
+      });
+    })();
+
+    (function () {
+      var decks = document.querySelectorAll('[data-km-review-rotator]');
+      if (!decks.length) return;
+
+      decks.forEach(function (deck) {
+        var cards = Array.prototype.slice.call(deck.querySelectorAll('.km-review-card'));
+        if (cards.length < 2) return;
+
+        var current = 0;
+        setInterval(function () {
+          cards[current].classList.remove('is-active');
+          current = (current + 1) % cards.length;
+          cards[current].classList.add('is-active');
+        }, 4200);
       });
     })();
     })();
