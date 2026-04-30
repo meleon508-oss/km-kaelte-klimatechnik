@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="KM Kälte-Klimatechnik | Düsseldorf und Umgebung" />
   <meta name="twitter:description" content="Klimatechnik und Kältetechnik in Düsseldorf und Umgebung: Beratung, Montage, Wartung und Reparatur für Privat und Gewerbe." />
   <meta name="twitter:image" content="https://meleon508-oss.github.io/km-kaelte-klimatechnik/img/hero-house.jpg" />
-  <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.kkl.de; font-src &#39;self&#39; data: https://fonts.gstatic.com https://www.kkl.de; img-src &#39;self&#39; data: https:; media-src &#39;self&#39; data: https:; connect-src &#39;self&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; form-action &#39;self&#39; mailto: tel:; frame-ancestors &#39;none&#39;; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39; https://maps.googleapis.com https://maps.gstatic.com; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.kkl.de; font-src &#39;self&#39; data: https://fonts.gstatic.com https://www.kkl.de https://maps.gstatic.com; img-src &#39;self&#39; data: https:; media-src &#39;self&#39; data: https:; connect-src &#39;self&#39; https://maps.googleapis.com https://maps.gstatic.com; object-src &#39;none&#39;; base-uri &#39;self&#39;; form-action &#39;self&#39; mailto: tel:; frame-ancestors &#39;none&#39;; upgrade-insecure-requests" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=()" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -817,27 +817,88 @@
     }
 
     .km-reviews {
-      background: #ffffff;
+      background: linear-gradient(180deg, #f6fafe 0%, #ffffff 100%);
       border-top: 1px solid #d6e2ec;
       border-bottom: 1px solid #d6e2ec;
     }
 
     .km-reviews h3 {
       color: #173047;
+      margin: 0 0 0.4rem;
+    }
+
+    .km-review-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
       margin-bottom: 0.4rem;
+      flex-wrap: wrap;
     }
 
     .km-reviews p {
       color: #5f7080;
+      margin-bottom: 0.8rem;
+    }
+
+    .km-google-badge {
+      display: inline-flex;
+      gap: 0.02em;
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      user-select: none;
+    }
+
+    .km-google-badge .c-blue {
+      color: #4285f4;
+    }
+
+    .km-google-badge .c-red {
+      color: #ea4335;
+    }
+
+    .km-google-badge .c-yellow {
+      color: #fbbc05;
+    }
+
+    .km-google-badge .c-green {
+      color: #34a853;
+    }
+
+    .km-review-summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 1px solid #d8e5f1;
+      border-radius: 999px;
+      padding: 0.45rem 0.85rem;
+      margin-bottom: 0.9rem;
+      color: #2a3d4d;
+      box-shadow: 0 0.25rem 0.65rem rgba(10, 40, 63, 0.08);
+    }
+
+    .km-review-summary strong {
+      color: #18354d;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .km-review-count {
+      color: #667988;
+      font-size: 14px;
+      line-height: 1.2;
     }
 
     .km-review-deck {
       position: relative;
-      min-height: 248px;
+      min-height: 286px;
       border: 1px solid #d5e2ef;
-      border-radius: 10px;
-      background: linear-gradient(155deg, #f8fbfe 0%, #eef5fc 100%);
-      box-shadow: 0 0.55rem 1.15rem rgba(8, 38, 58, 0.1);
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 0.65rem 1.2rem rgba(8, 38, 58, 0.1);
       overflow: hidden;
     }
 
@@ -846,12 +907,12 @@
       inset: 0;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.62s ease;
-      padding: 22px 20px;
+      transition: opacity 0.58s ease;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       gap: 10px;
+      justify-content: center;
     }
 
     .km-review-card.is-active {
@@ -859,37 +920,142 @@
       pointer-events: auto;
     }
 
-    .km-review-stars {
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: 0.18em;
-      color: #f0b400;
+    .km-review-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .km-review-title {
+    .km-review-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid #d8e6f2;
+      background: #eaf2f9;
+    }
+
+    .km-review-avatar-fallback {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid #d8e6f2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #3f5668;
+      font-weight: 700;
+      background: #eef5fb;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .km-review-author-wrap {
+      min-width: 0;
+    }
+
+    .km-review-author {
       margin: 0;
-      color: #173047;
-      font-size: 24px;
+      font-size: 17px;
       line-height: 1.2;
+      color: #17354e;
+      font-weight: 700;
+    }
+
+    .km-review-author a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .km-review-author a:hover,
+    .km-review-author a:focus-visible {
+      border-bottom-color: #17354e;
+    }
+
+    .km-review-date {
+      margin: 3px 0 0;
+      color: #6f8392;
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
+    .km-review-stars {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: 0.12em;
+      color: #f5b400;
+      line-height: 1.1;
+    }
+
+    .km-review-stars.is-small {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      margin: 0;
     }
 
     .km-review-text {
       margin: 0;
-      color: #4f6373;
-      font-size: 18px;
+      color: #41586a;
+      font-size: 17px;
       line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .km-review-meta {
       margin: 2px 0 0;
-      color: #688093;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      color: #6a8194;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .km-review-meta .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #8da2b1;
+      flex-shrink: 0;
+    }
+
+    .km-review-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 10px;
+      min-height: 10px;
+    }
+
+    .km-review-controls .km-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #b8cad8;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .km-review-controls .km-dot.is-active {
+      background: #357ee6;
+      transform: scale(1.15);
     }
 
     .km-review-link {
       margin-top: 14px;
+    }
+
+    .km-review-note {
+      margin: 0.35rem 0 0;
+      color: #6e7f8d;
+      font-size: 13px;
+      line-height: 1.35;
     }
 
     @media (max-width: 767px) {
@@ -897,16 +1063,16 @@
         font-size: 14px;
       }
 
-      .km-review-deck {
-        min-height: 286px;
+      .km-google-badge {
+        font-size: 27px;
       }
 
-      .km-review-title {
-        font-size: 21px;
+      .km-review-deck {
+        min-height: 330px;
       }
 
       .km-review-text {
-        font-size: 17px;
+        font-size: 16px;
       }
     }
 
@@ -1596,56 +1762,43 @@
 
       <section id="bewertungen" class="km-reviews py-4 py-lg-6">
         <div class="container">
-          <h3>Google-Bewertungen</h3>
-          <p>Kundenstimmen aus Düsseldorf und Umgebung. Alle Bewertungen werden nacheinander eingeblendet.</p>
+          <div class="km-review-head">
+            <div>
+              <h3>Google-Bewertungen</h3>
+              <p>Echte Rezensionen direkt aus Google. Die Bewertungen wechseln automatisch.</p>
+            </div>
+            <div class="km-google-badge" aria-hidden="true">
+              <span class="c-blue">G</span><span class="c-red">o</span><span class="c-yellow">o</span><span class="c-blue">g</span><span class="c-green">l</span><span class="c-red">e</span>
+            </div>
+          </div>
 
-          <div class="km-review-deck" data-km-review-rotator aria-live="polite">
-            <article class="km-review-card is-active">
-              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
-              <h4 class="km-review-title">Sehr saubere Ausführung</h4>
-              <p class="km-review-text">Rückmeldungen aus dem Google-Profil heben besonders die ordentliche Montage, klare Leitungsführung und den professionellen Gesamteindruck hervor.</p>
-              <p class="km-review-meta">Google Bewertung</p>
-            </article>
+          <div class="km-review-summary" id="km-review-summary">
+            <p class="km-review-stars is-small" id="km-rating-stars" aria-hidden="true">★★★★★</p>
+            <strong id="km-rating-value">5,0</strong>
+            <span class="km-review-count" id="km-rating-count">Google-Bewertungen</span>
+          </div>
 
-            <article class="km-review-card">
+          <div class="km-review-deck" data-km-review-rotator data-google-api-key="" data-google-place-id="" data-google-language="de" data-rotate-ms="5600" aria-live="polite">
+            <article class="km-review-card is-active" data-km-fallback>
+              <div class="km-review-top">
+                <span class="km-review-avatar-fallback" aria-hidden="true">KM</span>
+                <div class="km-review-author-wrap">
+                  <p class="km-review-author">Google Bewertung</p>
+                  <p class="km-review-date">Live-Anzeige aktivierbar</p>
+                </div>
+              </div>
               <p class="km-review-stars" aria-hidden="true">★★★★★</p>
-              <h4 class="km-review-title">Schnelle Reaktion</h4>
-              <p class="km-review-text">Mehrfach genannt werden zügige Rückmeldungen, verbindliche Terminabstimmung und eine transparente Kommunikation während des gesamten Einsatzes.</p>
-              <p class="km-review-meta">Google Bewertung</p>
-            </article>
-
-            <article class="km-review-card">
-              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
-              <h4 class="km-review-title">Freundlicher Service</h4>
-              <p class="km-review-text">Kunden loben den respektvollen Umgang vor Ort sowie die verständliche Erklärung der umgesetzten Technik und der nächsten Service-Schritte.</p>
-              <p class="km-review-meta">Google Bewertung</p>
-            </article>
-
-            <article class="km-review-card">
-              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
-              <h4 class="km-review-title">Technisch zuverlässig</h4>
-              <p class="km-review-text">In den Bewertungen wird die fachgerechte Inbetriebnahme mit stabil laufenden Anlagen und durchdachter Ausführung im Bestand besonders hervorgehoben.</p>
-              <p class="km-review-meta">Google Bewertung</p>
-            </article>
-
-            <article class="km-review-card">
-              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
-              <h4 class="km-review-title">Stark im Bestand</h4>
-              <p class="km-review-text">Mehrere Rezensionen betonen, dass Nachrüstungen mit hoher Sorgfalt, sauberem Schutz der Räume und klarer Struktur umgesetzt wurden.</p>
-              <p class="km-review-meta">Google Bewertung</p>
-            </article>
-
-            <article class="km-review-card">
-              <p class="km-review-stars" aria-hidden="true">★★★★★</p>
-              <h4 class="km-review-title">Empfehlung aus Erfahrung</h4>
-              <p class="km-review-text">Wiederkehrend werden Zuverlässigkeit, Qualität und die insgesamt professionelle Arbeitsweise als Gründe für klare Weiterempfehlungen genannt.</p>
-              <p class="km-review-meta">Google Bewertung</p>
+              <p class="km-review-text">Sobald Google API-Key und Place-ID hinterlegt sind, zeigt dieser Bereich automatisch echte Rezensionen im Wechsel.</p>
+              <p class="km-review-meta"><span>Quelle: Google</span><span class="dot" aria-hidden="true"></span><span>Rotierend</span></p>
             </article>
           </div>
 
+          <div class="km-review-controls" data-km-review-dots aria-hidden="true"></div>
+
           <p class="km-review-link mb-0">
-            <a class="btn btn-outline-primary btn-icon-arrow-right-border" href="https://www.google.com/search?q=KM+K%C3%A4lte-Klimatechnik+Meisterbetrieb+Rezensionen" target="_blank" rel="noopener noreferrer">Alle Google-Bewertungen ansehen</a>
+            <a class="btn btn-outline-primary btn-icon-arrow-right-border" id="km-all-google-reviews-link" href="https://www.google.com/search?q=KM+K%C3%A4lte-Klimatechnik+Meisterbetrieb+Rezensionen" target="_blank" rel="noopener noreferrer">Alle Google-Bewertungen ansehen</a>
           </p>
+          <p class="km-review-note">Hinweis: Es werden die von Google bereitgestellten Bewertungen angezeigt. Mit Klick auf den Button öffnen Sie alle Rezensionen im Google-Profil.</p>
         </div>
       </section>
 
@@ -1793,6 +1946,14 @@
   </div>
 
   <script>
+    window.KM_GOOGLE_REVIEWS = window.KM_GOOGLE_REVIEWS || {
+      apiKey: "",
+      placeId: "",
+      language: "de"
+    };
+  </script>
+
+  <script>
     (function () {
       var menuBtn = document.getElementById("km-menu-btn");
       var mobileNav = document.getElementById("km-mobile-nav");
@@ -1809,41 +1970,252 @@
           menuBtn.setAttribute("aria-expanded", "false");
         });
       });
-
+    })();
 
     (function () {
-      var sliders = document.querySelectorAll('[data-km-slideshow]');
+      var sliders = document.querySelectorAll("[data-km-slideshow]");
       if (!sliders.length) return;
 
       sliders.forEach(function (slider) {
-        var slides = Array.prototype.slice.call(slider.querySelectorAll('.km-slide'));
+        var slides = Array.prototype.slice.call(slider.querySelectorAll(".km-slide"));
         if (slides.length < 2) return;
 
         var current = 0;
         setInterval(function () {
-          slides[current].classList.remove('is-active');
+          slides[current].classList.remove("is-active");
           current = (current + 1) % slides.length;
-          slides[current].classList.add('is-active');
+          slides[current].classList.add("is-active");
         }, 3300);
       });
     })();
 
     (function () {
-      var decks = document.querySelectorAll('[data-km-review-rotator]');
-      if (!decks.length) return;
+      var deck = document.querySelector("[data-km-review-rotator]");
+      if (!deck) return;
 
-      decks.forEach(function (deck) {
-        var cards = Array.prototype.slice.call(deck.querySelectorAll('.km-review-card'));
-        if (cards.length < 2) return;
+      var dotsRoot = document.querySelector("[data-km-review-dots]");
+      var ratingStarsNode = document.getElementById("km-rating-stars");
+      var ratingValueNode = document.getElementById("km-rating-value");
+      var ratingCountNode = document.getElementById("km-rating-count");
+      var allReviewsLink = document.getElementById("km-all-google-reviews-link");
+      var rotateMs = Number(deck.getAttribute("data-rotate-ms") || 5600);
+      var fallbackCards = Array.prototype.slice.call(deck.querySelectorAll(".km-review-card"));
+      var rotationTimer;
 
+      function escapeHtml(value) {
+        return String(value || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/\"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function formatRating(rating) {
+        var normalized = Number(rating || 0);
+        if (!isFinite(normalized) || normalized <= 0) return "5,0";
+        return normalized.toFixed(1).replace(".", ",");
+      }
+
+      function starString(rating) {
+        var normalized = Number(rating || 0);
+        if (!isFinite(normalized) || normalized <= 0) normalized = 5;
+        var full = Math.max(0, Math.min(5, Math.round(normalized)));
+        return "★".repeat(full) + "☆".repeat(5 - full);
+      }
+
+      function getInitials(name) {
+        var clean = String(name || "").trim();
+        if (!clean) return "G";
+        var parts = clean.split(/\s+/).slice(0, 2);
+        return parts.map(function (p) { return p.charAt(0).toUpperCase(); }).join("");
+      }
+
+      function buildCard(review) {
+        var authorName = review.author_name || "Google Nutzer";
+        var authorUrl = review.author_url || "";
+        var profilePhoto = review.profile_photo_url || "";
+        var timeInfo = review.relative_time_description || "Google Rezension";
+        var text = review.text || "Keine Textbewertung hinterlegt.";
+        var rating = Number(review.rating || 5);
+        var avatarHtml = profilePhoto
+          ? '<img class="km-review-avatar" src="' + escapeHtml(profilePhoto) + '" alt="Profilbild von ' + escapeHtml(authorName) + '" loading="lazy" referrerpolicy="no-referrer" />'
+          : '<span class="km-review-avatar-fallback" aria-hidden="true">' + escapeHtml(getInitials(authorName)) + "</span>";
+        var authorHtml = authorUrl
+          ? '<a href="' + escapeHtml(authorUrl) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(authorName) + "</a>"
+          : escapeHtml(authorName);
+
+        return (
+          '<article class="km-review-card">' +
+            '<div class="km-review-top">' +
+              avatarHtml +
+              '<div class="km-review-author-wrap">' +
+                '<p class="km-review-author">' + authorHtml + "</p>" +
+                '<p class="km-review-date">' + escapeHtml(timeInfo) + "</p>" +
+              "</div>" +
+            "</div>" +
+            '<p class="km-review-stars" aria-hidden="true">' + starString(rating) + "</p>" +
+            '<p class="km-review-text">' + escapeHtml(text) + "</p>" +
+            '<p class="km-review-meta"><span>Quelle: Google</span><span class="dot" aria-hidden="true"></span><span>Verifizierte Google-Rezension</span></p>' +
+          "</article>"
+        );
+      }
+
+      function renderDots(cardCount) {
+        if (!dotsRoot) return [];
+        dotsRoot.innerHTML = "";
+        var dots = [];
+        for (var i = 0; i < cardCount; i += 1) {
+          var dot = document.createElement("span");
+          dot.className = "km-dot";
+          if (i === 0) dot.classList.add("is-active");
+          dotsRoot.appendChild(dot);
+          dots.push(dot);
+        }
+        return dots;
+      }
+
+      function startRotation(cards) {
+        if (!cards || cards.length < 2) return;
+        var dots = renderDots(cards.length);
         var current = 0;
-        setInterval(function () {
-          cards[current].classList.remove('is-active');
+
+        if (rotationTimer) {
+          clearInterval(rotationTimer);
+        }
+
+        rotationTimer = setInterval(function () {
+          cards[current].classList.remove("is-active");
+          if (dots[current]) dots[current].classList.remove("is-active");
           current = (current + 1) % cards.length;
-          cards[current].classList.add('is-active');
-        }, 4200);
-      });
-    })();
+          cards[current].classList.add("is-active");
+          if (dots[current]) dots[current].classList.add("is-active");
+        }, rotateMs);
+      }
+
+      function useFallback() {
+        if (!fallbackCards.length) return;
+        fallbackCards.forEach(function (card, index) {
+          card.classList.toggle("is-active", index === 0);
+        });
+        startRotation(fallbackCards);
+      }
+
+      function loadGooglePlaces(apiKey, language) {
+        if (window.google && window.google.maps && window.google.maps.places) {
+          return Promise.resolve();
+        }
+
+        if (window.__kmGooglePlacesPromise) {
+          return window.__kmGooglePlacesPromise;
+        }
+
+        window.__kmGooglePlacesPromise = new Promise(function (resolve, reject) {
+          var callbackName = "__kmGooglePlacesLoaded";
+          window[callbackName] = function () {
+            try {
+              delete window[callbackName];
+            } catch (e) {}
+            resolve();
+          };
+
+          var script = document.createElement("script");
+          script.async = true;
+          script.defer = true;
+          script.src =
+            "https://maps.googleapis.com/maps/api/js?loading=async&libraries=places&key=" +
+            encodeURIComponent(apiKey) +
+            "&language=" +
+            encodeURIComponent(language || "de") +
+            "&callback=" +
+            callbackName;
+          script.onerror = function () {
+            try {
+              delete window[callbackName];
+            } catch (e) {}
+            reject(new Error("Google Maps Script konnte nicht geladen werden."));
+          };
+
+          document.head.appendChild(script);
+        });
+
+        return window.__kmGooglePlacesPromise;
+      }
+
+      function getPlaceDetails(placeId) {
+        return new Promise(function (resolve, reject) {
+          var service = new google.maps.places.PlacesService(document.createElement("div"));
+          service.getDetails(
+            {
+              placeId: placeId,
+              fields: ["name", "rating", "user_ratings_total", "url", "reviews"]
+            },
+            function (place, status) {
+              if (status !== google.maps.places.PlacesServiceStatus.OK || !place) {
+                reject(new Error("Place Details konnten nicht geladen werden."));
+                return;
+              }
+              resolve(place);
+            }
+          );
+        });
+      }
+
+      function renderGoogleCards(place) {
+        var reviews = Array.isArray(place.reviews) ? place.reviews.slice(0, 5) : [];
+        if (!reviews.length) {
+          useFallback();
+          return;
+        }
+
+        if (ratingValueNode) {
+          ratingValueNode.textContent = formatRating(place.rating);
+        }
+        if (ratingStarsNode) {
+          ratingStarsNode.textContent = starString(place.rating);
+        }
+        if (ratingCountNode) {
+          var total = Number(place.user_ratings_total || 0);
+          ratingCountNode.textContent = total > 0 ? total + " Google-Bewertungen" : "Google-Bewertungen";
+        }
+        if (allReviewsLink && place.url) {
+          allReviewsLink.href = place.url;
+        }
+
+        var cardsHtml = reviews.map(buildCard).join("");
+        deck.innerHTML = cardsHtml;
+        var cards = Array.prototype.slice.call(deck.querySelectorAll(".km-review-card"));
+        cards.forEach(function (card, index) {
+          card.classList.toggle("is-active", index === 0);
+        });
+        startRotation(cards);
+      }
+
+      var apiKey = (deck.getAttribute("data-google-api-key") || "").trim();
+      var placeId = (deck.getAttribute("data-google-place-id") || "").trim();
+      var language = (deck.getAttribute("data-google-language") || "de").trim();
+
+      if (window.KM_GOOGLE_REVIEWS && typeof window.KM_GOOGLE_REVIEWS === "object") {
+        if (!apiKey && window.KM_GOOGLE_REVIEWS.apiKey) apiKey = String(window.KM_GOOGLE_REVIEWS.apiKey).trim();
+        if (!placeId && window.KM_GOOGLE_REVIEWS.placeId) placeId = String(window.KM_GOOGLE_REVIEWS.placeId).trim();
+        if (window.KM_GOOGLE_REVIEWS.language) language = String(window.KM_GOOGLE_REVIEWS.language).trim();
+      }
+
+      if (!apiKey || !placeId) {
+        useFallback();
+        return;
+      }
+
+      loadGooglePlaces(apiKey, language)
+        .then(function () {
+          return getPlaceDetails(placeId);
+        })
+        .then(function (place) {
+          renderGoogleCards(place);
+        })
+        .catch(function () {
+          useFallback();
+        });
     })();
   </script>
 </body>
