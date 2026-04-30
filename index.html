@@ -1778,7 +1778,7 @@
             <span class="km-review-count" id="km-rating-count">Google-Bewertungen</span>
           </div>
 
-          <div class="km-review-deck" data-km-review-rotator data-google-api-key="" data-google-place-id="" data-google-language="de" data-rotate-ms="5600" aria-live="polite">
+          <div class="km-review-deck" data-km-review-rotator data-google-api-key="" data-google-place-id="" data-google-query="KKM Kälte-Klimatechnik Meisterbetrieb, Unterrather Str. 101, 40468 Düsseldorf, 01520 8598997" data-google-language="de" data-rotate-ms="5600" aria-live="polite">
             <article class="km-review-card is-active" data-km-fallback>
               <div class="km-review-top">
                 <span class="km-review-avatar-fallback" aria-hidden="true">KM</span>
@@ -1949,6 +1949,7 @@
     window.KM_GOOGLE_REVIEWS = window.KM_GOOGLE_REVIEWS || {
       apiKey: "",
       placeId: "",
+      query: "KKM Kälte-Klimatechnik Meisterbetrieb, Unterrather Str. 101, 40468 Düsseldorf, 01520 8598997",
       language: "de"
     };
   </script>
@@ -2161,6 +2162,25 @@
         });
       }
 
+      function findPlaceIdByQuery(query) {
+        return new Promise(function (resolve, reject) {
+          var service = new google.maps.places.PlacesService(document.createElement("div"));
+          service.findPlaceFromQuery(
+            {
+              query: query,
+              fields: ["place_id", "name"]
+            },
+            function (results, status) {
+              if (status !== google.maps.places.PlacesServiceStatus.OK || !results || !results.length || !results[0].place_id) {
+                reject(new Error("Place-ID konnte aus Suchanfrage nicht ermittelt werden."));
+                return;
+              }
+              resolve(results[0].place_id);
+            }
+          );
+        });
+      }
+
       function renderGoogleCards(place) {
         var reviews = Array.isArray(place.reviews) ? place.reviews.slice(0, 5) : [];
         if (!reviews.length) {
@@ -2193,22 +2213,36 @@
 
       var apiKey = (deck.getAttribute("data-google-api-key") || "").trim();
       var placeId = (deck.getAttribute("data-google-place-id") || "").trim();
+      var query = (deck.getAttribute("data-google-query") || "").trim();
       var language = (deck.getAttribute("data-google-language") || "de").trim();
 
       if (window.KM_GOOGLE_REVIEWS && typeof window.KM_GOOGLE_REVIEWS === "object") {
         if (!apiKey && window.KM_GOOGLE_REVIEWS.apiKey) apiKey = String(window.KM_GOOGLE_REVIEWS.apiKey).trim();
         if (!placeId && window.KM_GOOGLE_REVIEWS.placeId) placeId = String(window.KM_GOOGLE_REVIEWS.placeId).trim();
+        if (!query && window.KM_GOOGLE_REVIEWS.query) query = String(window.KM_GOOGLE_REVIEWS.query).trim();
         if (window.KM_GOOGLE_REVIEWS.language) language = String(window.KM_GOOGLE_REVIEWS.language).trim();
       }
 
-      if (!apiKey || !placeId) {
+      if (!apiKey || (!placeId && !query)) {
         useFallback();
         return;
       }
 
       loadGooglePlaces(apiKey, language)
         .then(function () {
-          return getPlaceDetails(placeId);
+          if (!placeId && query) {
+            return findPlaceIdByQuery(query).then(function (resolvedPlaceId) {
+              placeId = resolvedPlaceId;
+              return resolvedPlaceId;
+            });
+          }
+          return placeId;
+        })
+        .then(function (resolvedPlaceId) {
+          if (!resolvedPlaceId) {
+            throw new Error("Keine Place-ID verfügbar.");
+          }
+          return getPlaceDetails(resolvedPlaceId);
         })
         .then(function (place) {
           renderGoogleCards(place);
