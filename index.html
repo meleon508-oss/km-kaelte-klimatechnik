@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="KM Kälte-Klimatechnik | Düsseldorf und Umgebung" />
   <meta name="twitter:description" content="Klimatechnik und Kältetechnik in Düsseldorf und Umgebung: Beratung, Montage, Wartung und Reparatur für Privat und Gewerbe." />
   <meta name="twitter:image" content="https://meleon508-oss.github.io/km-kaelte-klimatechnik/img/hero-house.jpg" />
-  <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39; https://maps.googleapis.com https://maps.gstatic.com; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.kkl.de; font-src &#39;self&#39; data: https://fonts.gstatic.com https://www.kkl.de https://maps.gstatic.com; img-src &#39;self&#39; data: https:; media-src &#39;self&#39; data: https:; connect-src &#39;self&#39; https://maps.googleapis.com https://maps.gstatic.com; object-src &#39;none&#39;; base-uri &#39;self&#39;; form-action &#39;self&#39; mailto: tel:; frame-ancestors &#39;none&#39;; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.kkl.de; font-src &#39;self&#39; data: https://fonts.gstatic.com https://www.kkl.de; img-src &#39;self&#39; data: https:; media-src &#39;self&#39; data: https:; connect-src &#39;self&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; form-action &#39;self&#39; mailto: tel:; frame-ancestors &#39;none&#39;; upgrade-insecure-requests" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=()" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1775,21 +1775,21 @@
           <div class="km-review-summary" id="km-review-summary">
             <p class="km-review-stars is-small" id="km-rating-stars" aria-hidden="true">★★★★★</p>
             <strong id="km-rating-value">5,0</strong>
-            <span class="km-review-count" id="km-rating-count">Google-Bewertungen</span>
+            <span class="km-review-count" id="km-rating-count">22 Google-Bewertungen</span>
           </div>
 
-          <div class="km-review-deck" data-km-review-rotator data-google-api-key="" data-google-place-id="" data-google-query="KKM Kälte-Klimatechnik Meisterbetrieb, Unterrather Str. 101, 40468 Düsseldorf, 01520 8598997" data-google-language="de" data-rotate-ms="5600" aria-live="polite">
+          <div class="km-review-deck" data-km-review-rotator data-rotate-ms="5600" aria-live="polite">
             <article class="km-review-card is-active" data-km-fallback>
               <div class="km-review-top">
-                <span class="km-review-avatar-fallback" aria-hidden="true">KM</span>
+                <span class="km-review-avatar-fallback" aria-hidden="true">AA</span>
                 <div class="km-review-author-wrap">
-                  <p class="km-review-author">Google Bewertung</p>
-                  <p class="km-review-date">Live-Anzeige aktivierbar</p>
+                  <p class="km-review-author">Abdu Adam</p>
+                  <p class="km-review-date">vor 1 Monat</p>
                 </div>
               </div>
               <p class="km-review-stars" aria-hidden="true">★★★★★</p>
-              <p class="km-review-text">Sobald Google API-Key und Place-ID hinterlegt sind, zeigt dieser Bereich automatisch echte Rezensionen im Wechsel.</p>
-              <p class="km-review-meta"><span>Quelle: Google</span><span class="dot" aria-hidden="true"></span><span>Rotierend</span></p>
+              <p class="km-review-text">Top Service! Sehr kompetent, zuverlässig und freundlich. Installation und Beratung waren erstklassig. Absolut empfehlenswert.</p>
+              <p class="km-review-meta"><span>Quelle: Google</span><span class="dot" aria-hidden="true"></span><span>Rezension</span></p>
             </article>
           </div>
 
@@ -1798,7 +1798,7 @@
           <p class="km-review-link mb-0">
             <a class="btn btn-outline-primary btn-icon-arrow-right-border" id="km-all-google-reviews-link" href="https://www.google.com/search?q=KM+K%C3%A4lte-Klimatechnik+Meisterbetrieb+Rezensionen" target="_blank" rel="noopener noreferrer">Alle Google-Bewertungen ansehen</a>
           </p>
-          <p class="km-review-note">Hinweis: Es werden die von Google bereitgestellten Bewertungen angezeigt. Mit Klick auf den Button öffnen Sie alle Rezensionen im Google-Profil.</p>
+          <p class="km-review-note">Stand der hier gezeigten Rezensionen: 30. April 2026. Mit Klick auf den Button öffnen Sie das Google-Profil mit allen Bewertungen.</p>
         </div>
       </section>
 
@@ -1946,15 +1946,6 @@
   </div>
 
   <script>
-    window.KM_GOOGLE_REVIEWS = window.KM_GOOGLE_REVIEWS || {
-      apiKey: "",
-      placeId: "",
-      query: "KKM Kälte-Klimatechnik Meisterbetrieb, Unterrather Str. 101, 40468 Düsseldorf, 01520 8598997",
-      language: "de"
-    };
-  </script>
-
-  <script>
     (function () {
       var menuBtn = document.getElementById("km-menu-btn");
       var mobileNav = document.getElementById("km-mobile-nav");
@@ -2000,8 +1991,32 @@
       var ratingCountNode = document.getElementById("km-rating-count");
       var allReviewsLink = document.getElementById("km-all-google-reviews-link");
       var rotateMs = Number(deck.getAttribute("data-rotate-ms") || 5600);
-      var fallbackCards = Array.prototype.slice.call(deck.querySelectorAll(".km-review-card"));
       var rotationTimer;
+
+      var reviews = [
+        { author: "Abdu Adam", date: "vor 1 Monat", rating: 5, text: "Top Service! Sehr kompetent, zuverlässig und freundlich. Installation und Beratung waren erstklassig – absolut empfehlenswert! Immer wieder. 5 volle Sterne." },
+        { author: "Pavel Sokolsky", date: "vor 1 Monat", rating: 5, text: "Vielen Dank für die hervorragende Arbeit! In meinem Haus auf zwei Etagen wurden die Klimaanlagen sehr schnell, sauber und professionell installiert." },
+        { author: "Heiko Schäfer", date: "vor 1 Monat", rating: 5, text: "100 % TOP-Empfehlung! Super Arbeit, hervorragendes Preis-/Leistungsverhältnis und ein sehr angenehmer persönlicher Kontakt." },
+        { author: "Gerhard van Löchtern", date: "vor 1 Monat", rating: 5, text: "Gute Arbeit und fairer Preis. Termine wurden sehr gut abgesprochen und eingehalten. Kann ich gut weiterempfehlen." },
+        { author: "Christian brezovsek", date: "vor 1 Monat", rating: 5, text: "Sehr netter Kontakt, super Beratung und perfekte Arbeit geleistet. Kann ich sehr empfehlen." },
+        { author: "Stefan Wegener", date: "vor 1 Monat", rating: 5, text: "Zum abgemachten Termin pünktlich erschienen. Sehr sauber gearbeitet und der vereinbarte Preis wurde eingehalten." },
+        { author: "skoot plaaay", date: "vor 1 Monat", rating: 5, text: "Top und saubere Arbeit!" },
+        { author: "Juan Garcia", date: "vor 1 Monat", rating: 5, text: "Bin sehr zufrieden mit der Firma KKM, kann man nur empfehlen." },
+        { author: "Elham Hashemi", date: "vor 2 Wochen", rating: 5, text: "Hervorragend." },
+        { author: "Steve the rooster", date: "vor 2 Wochen", rating: 5, text: "Heute wurde unsere Klimaanlage in kurzer Zeit sehr sauber eingebaut. Trotz anspruchsvoller Dachsituation war die Arbeit perfekt." },
+        { author: "Tiemo Gelewski", date: "vor 3 Wochen", rating: 5, text: "Bei mir wurden vier Innengeräte und ein Außengerät installiert. KKM Kälte-Klimatechnik hat hervorragende Arbeit geleistet." },
+        { author: "Hartmut Herzog", date: "vor 1 Monat", rating: 5, text: "Schon bei Besichtigung und Beratung war klar, dass hier sehr gute Fachkenntnisse vorhanden sind." },
+        { author: "Sinan Su", date: "vor 1 Monat", rating: 5, text: "Ich bin sehr zufrieden. Die Installation meiner Klimaanlage wurde sauber, fachgerecht und zuverlässig umgesetzt." },
+        { author: "Sven", date: "vor 1 Monat", rating: 5, text: "Kompetent, fair, top Preis-Leistungsverhältnis." },
+        { author: "Gudrun Cyriax-Treppel", date: "vor 1 Monat", rating: 5, text: "Sehr gute Arbeit, flexibel und hilfsbereit. Wir waren begeistert und sprechen unsere Empfehlung aus." },
+        { author: "Robert", date: "vor 1 Monat", rating: 5, text: "Sehr kompetent und optimale Preis-Leistung." },
+        { author: "Michael Schick", date: "vor 1 Monat", rating: 5, text: "Wir sind rundum zufrieden mit der Arbeit der Firma KKM Kälte- und Klimatechnik. Von Beratung bis Umsetzung sehr professionell." },
+        { author: "Peter Fischer", date: "vor 1 Monat", rating: 5, text: "Bis jetzt nur gute Erfahrungen gemacht, kompetent und zuverlässig. Kann ich nur weiterempfehlen." },
+        { author: "Rafael K.", date: "vor 1 Monat", rating: 5, text: "Wir haben ein Klimasplitgerät von LG durch die Firma KKM einbauen lassen und sind sehr zufrieden." },
+        { author: "M A", date: "vor 1 Monat", rating: 5, text: "Sehr guter Betrieb, geht auf die Wünsche des Kunden ein. Macht gute und saubere Arbeit." },
+        { author: "Chris F", date: "vor 1 Monat", rating: 5, text: "5/5 Sterne Bewertung." },
+        { author: "Said El Haddouchi", date: "vor 2 Monaten", rating: 5, text: "5/5 Sterne Bewertung." }
+      ];
 
       function escapeHtml(value) {
         return String(value || "")
@@ -2033,31 +2048,18 @@
       }
 
       function buildCard(review) {
-        var authorName = review.author_name || "Google Nutzer";
-        var authorUrl = review.author_url || "";
-        var profilePhoto = review.profile_photo_url || "";
-        var timeInfo = review.relative_time_description || "Google Rezension";
-        var text = review.text || "Keine Textbewertung hinterlegt.";
-        var rating = Number(review.rating || 5);
-        var avatarHtml = profilePhoto
-          ? '<img class="km-review-avatar" src="' + escapeHtml(profilePhoto) + '" alt="Profilbild von ' + escapeHtml(authorName) + '" loading="lazy" referrerpolicy="no-referrer" />'
-          : '<span class="km-review-avatar-fallback" aria-hidden="true">' + escapeHtml(getInitials(authorName)) + "</span>";
-        var authorHtml = authorUrl
-          ? '<a href="' + escapeHtml(authorUrl) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(authorName) + "</a>"
-          : escapeHtml(authorName);
-
         return (
           '<article class="km-review-card">' +
             '<div class="km-review-top">' +
-              avatarHtml +
+              '<span class="km-review-avatar-fallback" aria-hidden="true">' + escapeHtml(getInitials(review.author)) + "</span>" +
               '<div class="km-review-author-wrap">' +
-                '<p class="km-review-author">' + authorHtml + "</p>" +
-                '<p class="km-review-date">' + escapeHtml(timeInfo) + "</p>" +
+                '<p class="km-review-author">' + escapeHtml(review.author) + "</p>" +
+                '<p class="km-review-date">' + escapeHtml(review.date) + "</p>" +
               "</div>" +
             "</div>" +
-            '<p class="km-review-stars" aria-hidden="true">' + starString(rating) + "</p>" +
-            '<p class="km-review-text">' + escapeHtml(text) + "</p>" +
-            '<p class="km-review-meta"><span>Quelle: Google</span><span class="dot" aria-hidden="true"></span><span>Verifizierte Google-Rezension</span></p>' +
+            '<p class="km-review-stars" aria-hidden="true">' + starString(review.rating) + "</p>" +
+            '<p class="km-review-text">' + escapeHtml(review.text) + "</p>" +
+            '<p class="km-review-meta"><span>Quelle: Google</span><span class="dot" aria-hidden="true"></span><span>Veröffentlichte Rezension</span></p>' +
           "</article>"
         );
       }
@@ -2094,162 +2096,26 @@
         }, rotateMs);
       }
 
-      function useFallback() {
-        if (!fallbackCards.length) return;
-        fallbackCards.forEach(function (card, index) {
-          card.classList.toggle("is-active", index === 0);
-        });
-        startRotation(fallbackCards);
+      if (!reviews.length) return;
+
+      var total = reviews.length;
+      var avg = reviews.reduce(function (sum, review) {
+        return sum + Number(review.rating || 0);
+      }, 0) / total;
+
+      if (ratingValueNode) ratingValueNode.textContent = formatRating(avg);
+      if (ratingStarsNode) ratingStarsNode.textContent = starString(avg);
+      if (ratingCountNode) ratingCountNode.textContent = total + " Google-Bewertungen";
+      if (allReviewsLink) {
+        allReviewsLink.href = "https://www.google.com/search?q=KKM+K%C3%A4lte-Klimatechnik+Meisterbetrieb+Rezensionen";
       }
 
-      function loadGooglePlaces(apiKey, language) {
-        if (window.google && window.google.maps && window.google.maps.places) {
-          return Promise.resolve();
-        }
-
-        if (window.__kmGooglePlacesPromise) {
-          return window.__kmGooglePlacesPromise;
-        }
-
-        window.__kmGooglePlacesPromise = new Promise(function (resolve, reject) {
-          var callbackName = "__kmGooglePlacesLoaded";
-          window[callbackName] = function () {
-            try {
-              delete window[callbackName];
-            } catch (e) {}
-            resolve();
-          };
-
-          var script = document.createElement("script");
-          script.async = true;
-          script.defer = true;
-          script.src =
-            "https://maps.googleapis.com/maps/api/js?loading=async&libraries=places&key=" +
-            encodeURIComponent(apiKey) +
-            "&language=" +
-            encodeURIComponent(language || "de") +
-            "&callback=" +
-            callbackName;
-          script.onerror = function () {
-            try {
-              delete window[callbackName];
-            } catch (e) {}
-            reject(new Error("Google Maps Script konnte nicht geladen werden."));
-          };
-
-          document.head.appendChild(script);
-        });
-
-        return window.__kmGooglePlacesPromise;
-      }
-
-      function getPlaceDetails(placeId) {
-        return new Promise(function (resolve, reject) {
-          var service = new google.maps.places.PlacesService(document.createElement("div"));
-          service.getDetails(
-            {
-              placeId: placeId,
-              fields: ["name", "rating", "user_ratings_total", "url", "reviews"]
-            },
-            function (place, status) {
-              if (status !== google.maps.places.PlacesServiceStatus.OK || !place) {
-                reject(new Error("Place Details konnten nicht geladen werden."));
-                return;
-              }
-              resolve(place);
-            }
-          );
-        });
-      }
-
-      function findPlaceIdByQuery(query) {
-        return new Promise(function (resolve, reject) {
-          var service = new google.maps.places.PlacesService(document.createElement("div"));
-          service.findPlaceFromQuery(
-            {
-              query: query,
-              fields: ["place_id", "name"]
-            },
-            function (results, status) {
-              if (status !== google.maps.places.PlacesServiceStatus.OK || !results || !results.length || !results[0].place_id) {
-                reject(new Error("Place-ID konnte aus Suchanfrage nicht ermittelt werden."));
-                return;
-              }
-              resolve(results[0].place_id);
-            }
-          );
-        });
-      }
-
-      function renderGoogleCards(place) {
-        var reviews = Array.isArray(place.reviews) ? place.reviews.slice(0, 5) : [];
-        if (!reviews.length) {
-          useFallback();
-          return;
-        }
-
-        if (ratingValueNode) {
-          ratingValueNode.textContent = formatRating(place.rating);
-        }
-        if (ratingStarsNode) {
-          ratingStarsNode.textContent = starString(place.rating);
-        }
-        if (ratingCountNode) {
-          var total = Number(place.user_ratings_total || 0);
-          ratingCountNode.textContent = total > 0 ? total + " Google-Bewertungen" : "Google-Bewertungen";
-        }
-        if (allReviewsLink && place.url) {
-          allReviewsLink.href = place.url;
-        }
-
-        var cardsHtml = reviews.map(buildCard).join("");
-        deck.innerHTML = cardsHtml;
-        var cards = Array.prototype.slice.call(deck.querySelectorAll(".km-review-card"));
-        cards.forEach(function (card, index) {
-          card.classList.toggle("is-active", index === 0);
-        });
-        startRotation(cards);
-      }
-
-      var apiKey = (deck.getAttribute("data-google-api-key") || "").trim();
-      var placeId = (deck.getAttribute("data-google-place-id") || "").trim();
-      var query = (deck.getAttribute("data-google-query") || "").trim();
-      var language = (deck.getAttribute("data-google-language") || "de").trim();
-
-      if (window.KM_GOOGLE_REVIEWS && typeof window.KM_GOOGLE_REVIEWS === "object") {
-        if (!apiKey && window.KM_GOOGLE_REVIEWS.apiKey) apiKey = String(window.KM_GOOGLE_REVIEWS.apiKey).trim();
-        if (!placeId && window.KM_GOOGLE_REVIEWS.placeId) placeId = String(window.KM_GOOGLE_REVIEWS.placeId).trim();
-        if (!query && window.KM_GOOGLE_REVIEWS.query) query = String(window.KM_GOOGLE_REVIEWS.query).trim();
-        if (window.KM_GOOGLE_REVIEWS.language) language = String(window.KM_GOOGLE_REVIEWS.language).trim();
-      }
-
-      if (!apiKey || (!placeId && !query)) {
-        useFallback();
-        return;
-      }
-
-      loadGooglePlaces(apiKey, language)
-        .then(function () {
-          if (!placeId && query) {
-            return findPlaceIdByQuery(query).then(function (resolvedPlaceId) {
-              placeId = resolvedPlaceId;
-              return resolvedPlaceId;
-            });
-          }
-          return placeId;
-        })
-        .then(function (resolvedPlaceId) {
-          if (!resolvedPlaceId) {
-            throw new Error("Keine Place-ID verfügbar.");
-          }
-          return getPlaceDetails(resolvedPlaceId);
-        })
-        .then(function (place) {
-          renderGoogleCards(place);
-        })
-        .catch(function () {
-          useFallback();
-        });
+      deck.innerHTML = reviews.map(buildCard).join("");
+      var cards = Array.prototype.slice.call(deck.querySelectorAll(".km-review-card"));
+      cards.forEach(function (card, index) {
+        card.classList.toggle("is-active", index === 0);
+      });
+      startRotation(cards);
     })();
   </script>
 </body>
