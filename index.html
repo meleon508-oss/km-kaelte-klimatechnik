@@ -16,12 +16,12 @@
   <meta property="og:title" content="KM Kälte-Klimatechnik | Düsseldorf und Umgebung" />
   <meta property="og:description" content="Klimatechnik und Kältetechnik in Düsseldorf und Umgebung: Beratung, Montage, Wartung und Reparatur für Privat und Gewerbe." />
   <meta property="og:url" content="https://meleon508-oss.github.io/km-kaelte-klimatechnik/" />
-  <meta property="og:image" content="https://meleon508-oss.github.io/km-kaelte-klimatechnik/img/hero-house.jpg" />
+  <meta property="og:image" content="https://meleon508-oss.github.io/km-kaelte-klimatechnik/img/hero-top-klima.jpg" />
   <meta property="og:image:alt" content="KM Kälte-Klimatechnik Projektbild" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="KM Kälte-Klimatechnik | Düsseldorf und Umgebung" />
   <meta name="twitter:description" content="Klimatechnik und Kältetechnik in Düsseldorf und Umgebung: Beratung, Montage, Wartung und Reparatur für Privat und Gewerbe." />
-  <meta name="twitter:image" content="https://meleon508-oss.github.io/km-kaelte-klimatechnik/img/hero-house.jpg" />
+  <meta name="twitter:image" content="https://meleon508-oss.github.io/km-kaelte-klimatechnik/img/hero-top-klima.jpg" />
   <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.kkl.de; font-src &#39;self&#39; data: https://fonts.gstatic.com https://www.kkl.de; img-src &#39;self&#39; data: https:; media-src &#39;self&#39; data: https:; connect-src &#39;self&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; form-action &#39;self&#39; mailto: tel:; frame-ancestors &#39;none&#39;; upgrade-insecure-requests" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=()" />
@@ -427,7 +427,8 @@
       overflow: hidden;
     }
 
-    .km-hero-video {
+    .km-hero-video,
+    .km-hero-media {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -1112,7 +1113,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .km-hero-video {
+      video.km-hero-video {
         display: none;
       }
 
@@ -1207,7 +1208,8 @@
         grid-template-columns: 1fr;
       }
 
-      .km-hero-video {
+      .km-hero-video,
+      .km-hero-media {
         object-position: center 58%;
       }
 
@@ -1349,7 +1351,7 @@
     "@type": "HVACBusiness",
     "name": "KM Kälte-Klimatechnik Meisterbetrieb",
     "url": "https://meleon508-oss.github.io/km-kaelte-klimatechnik/",
-    "image": "https://meleon508-oss.github.io/km-kaelte-klimatechnik/img/hero-house.jpg",
+    "image": "https://meleon508-oss.github.io/km-kaelte-klimatechnik/img/hero-top-klima.jpg",
     "telephone": "+49 1520 8598997",
     "email": "info@km-kaelte-klimatechnik.de",
     "areaServed": ["Düsseldorf", "Düsseldorf und Umgebung"],
@@ -1481,9 +1483,7 @@
     <main id="top">
       <section class="page-header">
         <div class="header-item has-content km-hero">
-          <video class="km-hero-video" autoplay muted loop playsinline preload="auto" poster="img/hero-house.jpg" aria-hidden="true">
-            <source src="media/hero-air-conditioning.mp4" type="video/mp4" />
-          </video>
+          <img class="km-hero-media" src="img/hero-top-klima.jpg" alt="Innen- und Außeneinheit einer Klimaanlage an einem Wohnhaus" loading="eager" fetchpriority="high" />
           <div class="container content">
             <h1 class="headline-small">Klimatechnik Düsseldorf &amp; Umgebung</h1>
             <h2>Ihr Partner für Klima- und Kältetechnik.</h2>
